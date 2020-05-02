@@ -5,10 +5,23 @@
     <AssemblyName>App.Utils</AssemblyName>
     <RootNamespace>App.Utils</RootNamespace>
     <Authors>surfsky</Authors>
-    <Description>AppPlat utils</Description>
+    <Description>AppPlat utility library (ui-independent, platform-independent)
+This library supports many useful convinient extensions and methods, such as:
+
+    - ToXXX
+    - CastXXX
+    - ParseXXX
+    - AsXXXi
+    - Reflection
+    - Encode/Decode
+    - Interop
+    - EF extensions
+    - ...</Description>
     <PackageProjectUrl>http://github.com/surfsky/App.Utils</PackageProjectUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

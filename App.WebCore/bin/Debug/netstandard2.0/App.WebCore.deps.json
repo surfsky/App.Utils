@@ -9,8 +9,9 @@
     ".NETStandard,Version=v2.0/": {
       "App.WebCore/1.0.0": {
         "dependencies": {
-          "App.Utils": "1.0.0",
+          "App.Utils": "1.0.1",
           "Microsoft.AspNetCore.Authentication.Cookies": "2.2.0",
+          "Microsoft.AspNetCore.Hosting.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
           "NETStandard.Library": "2.0.3"
@@ -1544,7 +1545,7 @@
           }
         }
       },
-      "App.Utils/1.0.0": {
+      "App.Utils/1.0.1": {
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
           "Microsoft.Extensions.Caching.Memory": "3.1.3",
@@ -2518,7 +2519,7 @@
       "path": "zkweb.system.drawing/4.0.1",
       "hashPath": "zkweb.system.drawing.4.0.1.nupkg.sha512"
     },
-    "App.Utils/1.0.0": {
+    "App.Utils/1.0.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

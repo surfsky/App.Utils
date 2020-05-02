@@ -25,11 +25,14 @@ namespace App.Web
     /// </summary>
     public static partial class Asp
     {
-        private static IHttpContextAccessor _contextAccessor;
-        public static void Configure(IHttpContextAccessor contextAccessor)
+        static IHttpContextAccessor _contextAccessor;
+        //static IHostingEnvironment _host;
+        public static void Configure(IHttpContextAccessor contextAccessor, string hostFolder)
         {
             _contextAccessor = contextAccessor;
+            HostFolder = hostFolder;
         }
+        public static string HostFolder     { get; set; }
 
 
         //-------------------------------------
@@ -73,11 +76,10 @@ namespace App.Web
 
         /// <summary>主机根物理路径</summary>
         //public static string HostFolder => HttpRuntime.AppDomainAppPath;
-
-        public static string GetHostFolder(IHostingEnvironment env)
-        {
-            return env.ContentRootPath;
-        }
+        //public static string GetHostFolder(IHostingEnvironment env)
+        //{
+        //    return env.ContentRootPath;
+        //}
 
         /// <summary>获取服务器 IP</summary>
         public static string ServerIP => Current.Connection.LocalIpAddress.MapToIPv4().ToString();
@@ -199,19 +201,10 @@ namespace App.Web
         public static string MapPath(this string virtualPath)
         {
             if (virtualPath.IsEmpty())
-                return virtualPath;
+                return "";
             if (virtualPath.Contains("/"))
-                return Path.GetFullPath(virtualPath).Replace("~\\", ""); ;
+                return string.Format(@"{0}{1}", HostFolder, virtualPath.Replace(@"/", @"\"));
             return virtualPath;
-        }
-
-        /// <summary></summary>
-        /// <param name="host"></param>
-        /// <param name="url"></param>
-        /// <returns></returns>
-        public static string MapPath(IHostingEnvironment host, string url)
-        {
-            return Path.Combine(host.ContentRootPath, url);
         }
 
 

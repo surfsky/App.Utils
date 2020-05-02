@@ -74,6 +74,7 @@ namespace App.Utils
             {
                 MemoryStream ms = new MemoryStream();
                 ms.Write(bytes, 0, bytes.Length);
+                ms.Position = 0;
                 BinaryFormatter ser = new BinaryFormatter();
                 var o = ser.Deserialize(ms);
                 ms.Close();
