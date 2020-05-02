@@ -162,7 +162,7 @@ namespace App.Utils
         {
             get
             {
-                return IO.GetCache<SnowflakeID>("__SnowFlaker", () => {
+                return Cacher.Get<SnowflakeID>("__SnowFlaker", () => {
                     var machineId = CoreConfig.Instance.MachineId;
                     return new SnowflakeID(machineId, 2010, 41, 10, 12);
                 });

@@ -101,38 +101,39 @@ namespace App.Utils
         //------------------------------------------------------------
         //MemoryCache cache = HttpRuntime.Cache;
         //static MemoryCache cache = new MemoryCache(IOption;
-        static MyCacher cache = new MyCacher();
+        //static MyCacher cache = new MyCacher();
 
         /// <summary>清除缓存对象</summary>
-        public static void RemoveCache(string key)
-        {
-            cache.Remove(key);
-            System.Diagnostics.Debug.WriteLine("Clear cache : " + key);
-        }
-
-        /// <summary>设置缓存对象</summary>
-        public static void SetCache<T>(string key, T value, DateTime? expiredTime=null) where T : class
-        {
-            cache.Set(key, value, expiredTime);
-            System.Diagnostics.Debug.WriteLine("Create cache : " + key);
-        }
-
-        /// <summary>获取缓存对象（缓存到期后会清空，再次请求时会自动获取）</summary>
-        /// <param name="creator">创建方法。支持若该方法返回值为null</param>
-        public static T GetCache<T>(string key, Func<T> creator=null, DateTime? expiredTime=null) where T : class
-        {
-            if (creator == null)
-                return cache[key] as T;
-            else
-            {
-                if (!cache.Contains(key))
-                {
-                    T o = creator();
-                    SetCache(key, o, expiredTime);
-                }
-                return cache[key] as T;
-            }
-        }
+        //public static void RemoveCache(string key)
+        //{
+        //    //cache.Remove(key);
+        //    //System.Diagnostics.Debug.WriteLine("Clear cache : " + key);
+        //    Cacher.
+        //}
+        //
+        ///// <summary>设置缓存对象</summary>
+        //public static void SetCache<T>(string key, T value, DateTime? expiredTime=null) where T : class
+        //{
+        //    cache.Set(key, value, expiredTime);
+        //    //System.Diagnostics.Debug.WriteLine("Create cache : " + key);
+        //}
+        //
+        ///// <summary>获取缓存对象（缓存到期后会清空，再次请求时会自动获取）</summary>
+        ///// <param name="creator">创建方法。支持若该方法返回值为null</param>
+        //public static T GetCache<T>(string key, Func<T> creator=null, DateTime? expiredTime=null) where T : class
+        //{
+        //    if (creator == null)
+        //        return cache[key] as T;
+        //    else
+        //    {
+        //        if (!cache.Contains(key))
+        //        {
+        //            T o = creator();
+        //            SetCache(key, o, expiredTime);
+        //        }
+        //        return cache[key] as T;
+        //    }
+        //}
 
 
     }

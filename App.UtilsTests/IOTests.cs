@@ -43,14 +43,22 @@ namespace App.Utils.Tests
         [TestMethod()]
         public void GetCacheTest()
         {
-            var key = "Name";
-            var name1 = IO.GetCache(key, () => "Kevin");
-            var name2 = IO.GetCache<string>(key);
+            var name1 = Cacher.Get("Name", () => "Kevin");
+            var name2 = Cacher.Get<string>("Name");
             Assert.AreEqual(name1, name2);
-            IO.SetCache(key, "John");
-            var name3 = IO.GetCache<string>(key);
+
+            Cacher.Set("Name", "John");
+            var name3 = Cacher.Get<string>("Name");
             Assert.AreEqual(name3, "John");
+
+            var p1 = Cacher.Get<Person>("Kevin", () => new Person("Kevin"));
+            var p2 = Cacher.Get<Person>("Cherry", () => new Person("Cherry"));
+            var p3 = Cacher.Get<Person>("Kevin");
+            var p4 = Cacher.Get<Person>("Jerry");
+            Assert.AreEqual(p1.Name, p3.Name);
+            Assert.AreEqual(p4, null);
         }
+
 
         [TestMethod()]
         public void GetMimeTypeTest()
@@ -62,8 +70,8 @@ namespace App.Utils.Tests
 
             Assert.AreEqual(url1.GetMimeType(), @"image/jpeg");
             Assert.AreEqual(url2.GetMimeType(), @"application/msword");
-            Assert.AreEqual(url3.GetMimeType(), "");
-            Assert.AreEqual(url4.GetMimeType(), "");
+            Assert.AreEqual(url3.GetMimeType(), @"application/octet-stream");
+            Assert.AreEqual(url4.GetMimeType(), @"application/octet-stream");
         }
 
         [TestMethod()]
@@ -111,17 +119,6 @@ namespace App.Utils.Tests
             var root = @"c:\";
             Assert.AreEqual(@"c:\test\".ToRelativePath(root), @"\test\");
             Assert.AreEqual(@"d:\test\".ToRelativePath(root), @"");
-        }
-
-        [TestMethod()]
-        public void GetDictTest()
-        {
-            Person p1 = IO.GetCache<Person>("Kevin", () => new Person("Kevin"));
-            Person p2 = IO.GetCache<Person>("Cherry", () => new Person("Cherry"));
-            var p3 = IO.GetCache<Person>("Kevin");
-            var p4 = IO.GetCache<Person>("Jerry");
-            Assert.AreEqual(p1.Name, p3.Name);
-            Assert.AreEqual(p4, null);
         }
 
         [TestMethod()]

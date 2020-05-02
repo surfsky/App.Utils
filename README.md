@@ -4,10 +4,12 @@ AppPlat utility library (ui-independent, platform-independent)
 
 # Projects
 
-- App.Utils     基于 NetStandard 2.0 的辅助类库。支持 NetFramework 4.6.1及以后版本使用。
-- App.Entities  基于 NetStatndard 2.0 的 EF 单类框架。支持 NetFramework 4.6.1及以后版本使用。
-- App.Web       基于 AspNet 的Web辅助类库
-- App.WebCore   基于 AspNetCore 的Web辅助类库
+- App.Utils       基于 NetStandard 2.0 的辅助类库。支持 NetFramework 4.6.1及以后版本使用。
+- App.Entities    基于 NetStatndard 2.0 的 EF 单类框架。支持 NetFramework 4.6.1及以后版本使用。
+- App.Web         基于 AspNet 的Web辅助类库
+- App.WebCore     基于 AspNetCore 的Web辅助类库
+- App.UtilsTests  测试
+
 
 > https://docs.microsoft.com/zh-cn/dotnet/standard/net-standard
 虽然 NuGet 将 .NET Framework 4.6.1 视为支持 .NET Standard 1.5 到 2.0，

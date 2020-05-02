@@ -117,7 +117,7 @@ namespace App.Interop
             cp.GenerateInMemory = true;
 
             // 编译到内存，并创建实例
-            CompilerResults cr = cdp.CompileAssemblyFromSource(cp, code.ToString());
+            CompilerResults cr = cdp.CompileAssemblyFromSource(cp, code.ToString());  // fail: Operation is not supported on this platform
             if (cr.Errors.HasErrors)
             {
                 StringBuilder error = new StringBuilder();

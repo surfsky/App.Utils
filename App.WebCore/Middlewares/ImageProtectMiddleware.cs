@@ -26,7 +26,7 @@ namespace App.WebCore.Middlewares
         {
             var url = $"{context.Request.Scheme}://{context.Request.Host.Value}";
             var dict = context.Request.Headers;
-            var urlReferrer = dict[HeaderNamesReferer].ToString();
+            var urlReferrer = dict["refer"].ToString();
 
             if (!string.IsNullOrEmpty(urlReferrer) && !urlReferrer.StartsWith(url))
             {
@@ -40,9 +40,9 @@ namespace App.WebCore.Middlewares
 
     public static class Extensions
     {
-        public static IApplicationBuilder UseImageProtect(this IApplicationBuilder app)
+        public static IApplicationBuilder UseImageProtect(this IApplicationBuilder app, string root)
         {
-            return app.UseMiddleware<ImageProtectMiddleware>();
+            return app.UseMiddleware<ImageProtectMiddleware>(root);
         }
     }
 }

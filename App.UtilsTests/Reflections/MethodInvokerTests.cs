@@ -11,10 +11,5 @@ namespace App.Utils.Tests
     [TestClass()]
     public class MethodInvokerTests
     {
-        [TestMethod()]
-        public void CastTest()
-        {
-            Assert.Fail();
-        }
     }
 }

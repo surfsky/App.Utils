@@ -145,7 +145,7 @@ namespace App.Utils.Tests
 
 
         [TestMethod()]
-        public void ParseDictTest()
+        public void ParseQueryDictTest()
         {
             var txt = "id=1&name=Kevin";
             var dict = txt.ParseQueryDict();
@@ -153,18 +153,22 @@ namespace App.Utils.Tests
             var age = dict["age"];
             dict["age"] = "5";
             age = dict["age"];
+            Assert.AreEqual(dict.ToString(), "id=1&name=Kevin&age=5");
+
             dict.Remove("id");
             dict.Remove("birthday");
-            txt = dict.ToString();
+            Assert.AreEqual(dict.ToString(), "name=Kevin&age=5");
         }
 
         [TestMethod()]
         public void ToBinaryStringTest()
         {
-            int n = 99;
-            var text = n.ToBitString();
-            var bytes = text.ToBitBytes();
-            var m = bytes.ToInt32();
+            int n = 99;                  
+            var text = n.ToBitString();         // 00000000 00000000 00000000 01100011
+            var bytes = text.ToBitBytes();      // 0 0 0 99
+            var bytes2 = bytes.ReverseBytes();  // 99 0 0 0
+            var m = bytes2.ToInt32();           // 99
+            Assert.AreEqual(m, n);
         }
 
         [TestMethod()]

@@ -287,7 +287,7 @@ namespace App.Web
             var u = new Url(url);
             url = u.PurePath.ToLower();  // 只保留绝对路径，且去除查询字符串
             var key = url.MD5();
-            return IO.GetCache<Type>(key, () =>
+            return Cacher.Get<Type>(key, () =>
             {
                 Type type = null;
                 try { type = BuildManager.GetCompiledType(url); }

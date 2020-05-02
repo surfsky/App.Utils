@@ -118,7 +118,7 @@ namespace App.Entities
             get
             {
                 var t = typeof(T);
-                return IO.GetCache<SnowflakeIDAttribute>(t.FullName.MD5(), () => t.GetProperty("ID").GetAttribute<SnowflakeIDAttribute>());
+                return Cacher.Get<SnowflakeIDAttribute>(t.FullName.MD5(), () => t.GetProperty("ID").GetAttribute<SnowflakeIDAttribute>());
             }
         }
 
@@ -126,10 +126,10 @@ namespace App.Entities
         // 缓存
         //--------------------------------------
         /// <summary>单例</summary>
-        public static T Instance => IO.GetCache(typeof(T).Name, () => Set.FirstOrDefault());
+        public static T Instance => Cacher.Get(typeof(T).Name, () => Set.FirstOrDefault());
 
         /// <summary>所有数据的缓存</summary>
-        public static List<T> All => IO.GetCache(AllCacheName, () => ValidSet.ToList());
+        public static List<T> All => Cacher.Get(AllCacheName, () => ValidSet.ToList());
 
         /// <summary>所有数据缓存名称</summary>
         public static string AllCacheName => string.Format("All{0}s", typeof(T).Name);
@@ -138,8 +138,8 @@ namespace App.Entities
         /// <summary>清除该实体的全部数据缓存</summary>
         public static void ClearCache()
         {
-            IO.RemoveCache(typeof(T).Name);
-            IO.RemoveCache(AllCacheName);
+            Cacher.Remove(typeof(T).Name);
+            Cacher.Remove(AllCacheName);
         }
         /// <summary>加载该实体的全部数据缓存</summary>
         public static void LoadCache()

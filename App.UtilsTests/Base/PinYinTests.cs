@@ -14,6 +14,7 @@ namespace App.Utils.Tests
         [TestMethod()]
         public void ToPinYinTest()
         {
+            // 同样的代码，netframework ok， netcore 失败，估计字符集有问题。
             var txt = "你好,中国";
             Assert.AreEqual(txt.ToPinYin(),    "NiHao,ZhongGuo");
             Assert.AreEqual(txt.ToPinYinCap(), "NHZG");

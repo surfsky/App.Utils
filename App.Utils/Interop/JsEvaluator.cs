@@ -35,7 +35,7 @@ namespace App.Interop
         static JsEvaluator()
         {
             //ICodeCompiler compiler = new JScriptCodeProvider().CreateCompiler();  // 该接口已废弃
-            CodeDomProvider compiler = CodeDomProvider.CreateProvider("js");
+            CodeDomProvider compiler = CodeDomProvider.CreateProvider("JScript");   // js
             CompilerParameters parameters = new CompilerParameters();
             parameters.GenerateInMemory = true;
             CompilerResults results = compiler.CompileAssemblyFromSource(parameters, _jscriptSource);
