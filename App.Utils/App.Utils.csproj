@@ -19,9 +19,13 @@ This library supports many useful convinient extensions and methods, such as:
     - ...</Description>
     <PackageProjectUrl>http://github.com/surfsky/App.Utils</PackageProjectUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
-    <Version>1.0.2</Version>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.2.0</FileVersion>
+    <Version>2.0.2</Version>
+    <Copyright>MIT</Copyright>
+    <PackageReleaseNotes>depend on netstandard 2.0</PackageReleaseNotes>
+    <RepositoryUrl>http://github.com/surfsky/App.Utils</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

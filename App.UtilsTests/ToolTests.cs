@@ -12,35 +12,24 @@ namespace App.Utils.Tests
         [TestMethod()]
         public void IsEmptyTest()
         {
-        }
-
-        [TestMethod()]
-        public void IsEmptyTest()
-        {
-
             // string
             string text = null;
             Assert.IsTrue(text.IsEmpty());
-            text = "";
-            Assert.IsTrue(text.IsEmpty());
-            text = "aa";
-            Assert.IsTrue(text.IsNotEmpty());
+            Assert.IsTrue("".IsEmpty());
+            Assert.IsTrue("aa".IsNotEmpty());
 
             // list
             List<string> arr = null;
             Assert.IsTrue(arr.IsEmpty());
-            arr = new List<string> { };
-            Assert.IsTrue(arr.IsEmpty());
-            arr = new List<string> { "aa" };
-            Assert.IsTrue(arr.IsNotEmpty());
+            Assert.IsTrue(new List<string> { }.IsEmpty());
+            Assert.IsTrue(new List<string> { "aa" }.IsNotEmpty());
 
             // object
             Person p = null;
             Assert.IsTrue(p.IsEmpty());
-            p = new Person();
-            Assert.IsTrue(p.IsNotEmpty());
-
+            Assert.IsTrue(new Person().IsNotEmpty());
         }
+
         [TestMethod()]
         public void IIFTest()
         {

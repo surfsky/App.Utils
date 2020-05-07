@@ -127,20 +127,21 @@ namespace App.Utils
         /// <remarks>由于精度问题，可能有1s的误差</remarks>
         public static string ToTimeStamp(this DateTime dt)
         {
-            TimeSpan ts = dt.ToUniversalTime() - new DateTime(1970, 1, 1, 0, 0, 0, 0);
-            return Convert.ToInt64(ts.TotalSeconds).ToString(); 
+            TimeSpan span = dt.ToUniversalTime() - new DateTime(1970, 1, 1, 0, 0, 0, 0);
+            return Convert.ToInt64(span.TotalSeconds).ToString(); 
         }
 
 
         /// <summary>解析时间戳为时间</summary>
         /// <param name="timeStamp">Unix时间戳格式</param>
-        /// <returns>C#格式时间</returns>
+        /// <returns>C#格式时间（当前时区的时间）</returns>
         public static DateTime ParseTimeStamp(this string timeStamp)
         {
-            DateTime dt = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));
-            long ticks = long.Parse(timeStamp + "0000000");
-            TimeSpan span = new TimeSpan(ticks);
-            return dt.Add(span);
+            var ticks = long.Parse(timeStamp + "0000000");
+            var span = new TimeSpan(ticks);
+            var dt = new DateTime(1970, 1, 1).Add(span);
+            return TimeZoneInfo.ConvertTimeFromUtc(dt, TimeZoneInfo.Local);
+            //return TimeZone.CurrentTimeZone.ToLocalTime(dt);
         }
 
 

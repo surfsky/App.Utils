@@ -13,9 +13,11 @@ using System.Web;
 //using System.Web.UI;
 //using System.Web.UI.HtmlControls;
 using App.Utils;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Primitives;
 
 namespace App.Web
@@ -25,14 +27,31 @@ namespace App.Web
     /// </summary>
     public static partial class Asp
     {
+        /// <summary>
+        /// 注册 HttpContextAccessor 单例服务。
+        /// 可用 var accessor = app.ApplicationServices.GetRequiredService<IHttpContextAccessor>() 获取上下文对象
+        /// </summary>
+        //public static void AddHttpContext(this IServiceCollection services)
+        //{
+        //    services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+        //}
+
         static IHttpContextAccessor _contextAccessor;
-        //static IHostingEnvironment _host;
+        static string _hostFolder { get; set; }
+
+        /// <summary>配置App.Web参数（请确保已使用 services.AddHttpContextAccessor())</summary>
+        public static void UserAppWeb(this IApplicationBuilder app, string hostFolder)
+        {
+            _contextAccessor = app.ApplicationServices.GetRequiredService<IHttpContextAccessor>();
+            _hostFolder = hostFolder;
+        }
+
+        /// <summary>配置App.Web参数</summary>
         public static void Configure(IHttpContextAccessor contextAccessor, string hostFolder)
         {
             _contextAccessor = contextAccessor;
-            HostFolder = hostFolder;
+            _hostFolder = hostFolder;
         }
-        public static string HostFolder     { get; set; }
 
 
         //-------------------------------------
@@ -73,6 +92,20 @@ namespace App.Web
                 return $"{req.Scheme}://{req.Host.Value}";
             }
         }
+
+        /// <summary>获取请求的完整路径</summary>
+        public static string GetFullUrl(this HttpRequest request)
+        {
+            return new StringBuilder()
+                .Append(request.Scheme)
+                .Append("://")
+                .Append(request.Host)
+                .Append(request.PathBase)
+                .Append(request.Path)
+                .Append(request.QueryString)
+                .ToString();
+        }
+
 
         /// <summary>主机根物理路径</summary>
         //public static string HostFolder => HttpRuntime.AppDomainAppPath;
@@ -203,7 +236,7 @@ namespace App.Web
             if (virtualPath.IsEmpty())
                 return "";
             if (virtualPath.Contains("/"))
-                return string.Format(@"{0}{1}", HostFolder, virtualPath.Replace(@"/", @"\"));
+                return string.Format(@"{0}{1}", _hostFolder, virtualPath.Replace(@"/", @"\"));
             return virtualPath;
         }
 
