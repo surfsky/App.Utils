@@ -1,0 +1,12 @@
+\\Mac\Home\Downloads\Dev\AppPlat\App.Core\App.Utils\App.EntitiesCore\bin\Debug\netstandard2.0\App.EntitiesCore.deps.json
+\\Mac\Home\Downloads\Dev\AppPlat\App.Core\App.Utils\App.EntitiesCore\bin\Debug\netstandard2.0\App.EntitiesCore.dll
+\\Mac\Home\Downloads\Dev\AppPlat\App.Core\App.Utils\App.EntitiesCore\bin\Debug\netstandard2.0\App.EntitiesCore.pdb
+\\Mac\Home\Downloads\Dev\AppPlat\App.Core\App.Utils\App.EntitiesCore\bin\Debug\netstandard2.0\App.UtilsCore.dll
+\\Mac\Home\Downloads\Dev\AppPlat\App.Core\App.Utils\App.EntitiesCore\bin\Debug\netstandard2.0\App.UtilsCore.pdb
+\\Mac\Home\Downloads\Dev\AppPlat\App.Core\App.Utils\App.EntitiesCore\obj\Debug\netstandard2.0\App.EntitiesCore.csprojAssemblyReference.cache
+\\Mac\Home\Downloads\Dev\AppPlat\App.Core\App.Utils\App.EntitiesCore\obj\Debug\netstandard2.0\App.EntitiesCore.csproj.CoreCompileInputs.cache
+\\Mac\Home\Downloads\Dev\AppPlat\App.Core\App.Utils\App.EntitiesCore\obj\Debug\netstandard2.0\App.EntitiesCore.AssemblyInfoInputs.cache
+\\Mac\Home\Downloads\Dev\AppPlat\App.Core\App.Utils\App.EntitiesCore\obj\Debug\netstandard2.0\App.EntitiesCore.AssemblyInfo.cs
+\\Mac\Home\Downloads\Dev\AppPlat\App.Core\App.Utils\App.EntitiesCore\obj\Debug\netstandard2.0\App.EntitiesCore.csproj.CopyComplete
+\\Mac\Home\Downloads\Dev\AppPlat\App.Core\App.Utils\App.EntitiesCore\obj\Debug\netstandard2.0\App.EntitiesCore.dll
+\\Mac\Home\Downloads\Dev\AppPlat\App.Core\App.Utils\App.EntitiesCore\obj\Debug\netstandard2.0\App.EntitiesCore.pdb
