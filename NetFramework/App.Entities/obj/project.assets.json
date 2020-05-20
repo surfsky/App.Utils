@@ -1,0 +1,477 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.5": {
+      "EntityFramework/6.2.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ],
+        "compile": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        }
+      },
+      "Newtonsoft.Json/11.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Z.EntityFramework.Extensions/4.0.58": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework": "6.0.0"
+        },
+        "compile": {
+          "lib/net45/Z.EntityFramework.Extensions.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Z.EntityFramework.Extensions.dll": {}
+        }
+      },
+      "Z.EntityFramework.Plus.EF6/1.12.19": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework": "6.1.0",
+          "Z.EntityFramework.Extensions": "4.0.58",
+          "Z.Expressions.Eval": "3.1.8"
+        },
+        "compile": {
+          "lib/net45/Z.EntityFramework.Plus.EF6.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Z.EntityFramework.Plus.EF6.dll": {}
+        }
+      },
+      "Z.Expressions.Eval/3.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Z.Expressions.Eval.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Z.Expressions.Eval.dll": {}
+        }
+      },
+      "App.Utils/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/App.Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/App.Utils.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.5/win": {
+      "EntityFramework/6.2.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ],
+        "compile": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        }
+      },
+      "Newtonsoft.Json/11.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Z.EntityFramework.Extensions/4.0.58": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework": "6.0.0"
+        },
+        "compile": {
+          "lib/net45/Z.EntityFramework.Extensions.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Z.EntityFramework.Extensions.dll": {}
+        }
+      },
+      "Z.EntityFramework.Plus.EF6/1.12.19": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework": "6.1.0",
+          "Z.EntityFramework.Extensions": "4.0.58",
+          "Z.Expressions.Eval": "3.1.8"
+        },
+        "compile": {
+          "lib/net45/Z.EntityFramework.Plus.EF6.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Z.EntityFramework.Plus.EF6.dll": {}
+        }
+      },
+      "Z.Expressions.Eval/3.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Z.Expressions.Eval.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Z.Expressions.Eval.dll": {}
+        }
+      },
+      "App.Utils/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/App.Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/App.Utils.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.5/win-x64": {
+      "EntityFramework/6.2.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ],
+        "compile": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        }
+      },
+      "Newtonsoft.Json/11.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Z.EntityFramework.Extensions/4.0.58": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework": "6.0.0"
+        },
+        "compile": {
+          "lib/net45/Z.EntityFramework.Extensions.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Z.EntityFramework.Extensions.dll": {}
+        }
+      },
+      "Z.EntityFramework.Plus.EF6/1.12.19": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework": "6.1.0",
+          "Z.EntityFramework.Extensions": "4.0.58",
+          "Z.Expressions.Eval": "3.1.8"
+        },
+        "compile": {
+          "lib/net45/Z.EntityFramework.Plus.EF6.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Z.EntityFramework.Plus.EF6.dll": {}
+        }
+      },
+      "Z.Expressions.Eval/3.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Z.Expressions.Eval.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Z.Expressions.Eval.dll": {}
+        }
+      },
+      "App.Utils/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/App.Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/App.Utils.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.5/win-x86": {
+      "EntityFramework/6.2.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ],
+        "compile": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        }
+      },
+      "Newtonsoft.Json/11.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Z.EntityFramework.Extensions/4.0.58": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework": "6.0.0"
+        },
+        "compile": {
+          "lib/net45/Z.EntityFramework.Extensions.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Z.EntityFramework.Extensions.dll": {}
+        }
+      },
+      "Z.EntityFramework.Plus.EF6/1.12.19": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework": "6.1.0",
+          "Z.EntityFramework.Extensions": "4.0.58",
+          "Z.Expressions.Eval": "3.1.8"
+        },
+        "compile": {
+          "lib/net45/Z.EntityFramework.Plus.EF6.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Z.EntityFramework.Plus.EF6.dll": {}
+        }
+      },
+      "Z.Expressions.Eval/3.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Z.Expressions.Eval.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Z.Expressions.Eval.dll": {}
+        }
+      },
+      "App.Utils/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/App.Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/App.Utils.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EntityFramework/6.2.0": {
+      "sha512": "ptGyXOf26qLrtn+2doAmylIlCxOnBJANwlyyLrXDmqIk9O18IzLWHyxDwwAyhgXkxmbiaA0WNpRy67WRReInBw==",
+      "type": "package",
+      "path": "entityframework/6.2.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/net40/App.config.transform",
+        "content/net40/Web.config.transform",
+        "entityframework.6.2.0.nupkg.sha512",
+        "entityframework.nuspec",
+        "lib/net40/EntityFramework.SqlServer.dll",
+        "lib/net40/EntityFramework.SqlServer.xml",
+        "lib/net40/EntityFramework.dll",
+        "lib/net40/EntityFramework.xml",
+        "lib/net45/EntityFramework.SqlServer.dll",
+        "lib/net45/EntityFramework.SqlServer.xml",
+        "lib/net45/EntityFramework.dll",
+        "lib/net45/EntityFramework.xml",
+        "tools/EntityFramework.PowerShell.Utility.dll",
+        "tools/EntityFramework.PowerShell.dll",
+        "tools/EntityFramework.psd1",
+        "tools/EntityFramework.psm1",
+        "tools/about_EntityFramework.help.txt",
+        "tools/init.ps1",
+        "tools/install.ps1",
+        "tools/migrate.exe"
+      ]
+    },
+    "Newtonsoft.Json/11.0.2": {
+      "sha512": "IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+      "type": "package",
+      "path": "newtonsoft.json/11.0.2",
+      "files": [
+        ".nupkg.metadata",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.11.0.2.nupkg.sha512",
+        "newtonsoft.json.nuspec"
+      ]
+    },
+    "Z.EntityFramework.Extensions/4.0.58": {
+      "sha512": "TYsWaVsGBjrT+DP7VLZBVcN8hJuwJ6Wqp1wQH4+ndmFLIDYx4jDczH2sp+G+MWL8WgTr6+RE6MGkpkf7yKQpPA==",
+      "type": "package",
+      "path": "z.entityframework.extensions/4.0.58",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Z.EntityFramework.Extensions.dll",
+        "lib/net40/Z.EntityFramework.Extensions.xml",
+        "lib/net45/Z.EntityFramework.Extensions.dll",
+        "lib/net45/Z.EntityFramework.Extensions.xml",
+        "lib/netstandard2.1/Z.EntityFramework.Extensions.dll",
+        "lib/netstandard2.1/Z.EntityFramework.Extensions.xml",
+        "z.entityframework.extensions.4.0.58.nupkg.sha512",
+        "z.entityframework.extensions.nuspec"
+      ]
+    },
+    "Z.EntityFramework.Plus.EF6/1.12.19": {
+      "sha512": "lQGYr6HuPPUDZKjDyvFISqnpxBDYcRYP7gPEThD9lAQlVyb1Dmojqb9blxHQwWHi6TUu62gfDo12jrHVXFBgmw==",
+      "type": "package",
+      "path": "z.entityframework.plus.ef6/1.12.19",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Z.EntityFramework.Plus.EF6.dll",
+        "lib/net40/Z.EntityFramework.Plus.EF6.xml",
+        "lib/net45/Z.EntityFramework.Plus.EF6.dll",
+        "lib/net45/Z.EntityFramework.Plus.EF6.xml",
+        "lib/netstandard2.1/Z.EntityFramework.Plus.EF6.dll",
+        "lib/netstandard2.1/Z.EntityFramework.Plus.EF6.xml",
+        "z.entityframework.plus.ef6.1.12.19.nupkg.sha512",
+        "z.entityframework.plus.ef6.nuspec"
+      ]
+    },
+    "Z.Expressions.Eval/3.1.8": {
+      "sha512": "/hmlfY6dKYfD7eOBC9+4qvo5Oq2kCLtilU+6KwgmEGh88saU9Yc4jVtOo0LOSszgZZ7LrvrtQf0XIJCdmElHLg==",
+      "type": "package",
+      "path": "z.expressions.eval/3.1.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Z.Expressions.Eval.dll",
+        "lib/net40/Z.Expressions.Eval.xml",
+        "lib/net45/Z.Expressions.Eval.dll",
+        "lib/net45/Z.Expressions.Eval.xml",
+        "lib/netstandard2.0/Z.Expressions.Eval.dll",
+        "lib/netstandard2.0/Z.Expressions.Eval.xml",
+        "lib/netstandard2.1/Z.Expressions.Eval.dll",
+        "lib/netstandard2.1/Z.Expressions.Eval.xml",
+        "z.expressions.eval.3.1.8.nupkg.sha512",
+        "z.expressions.eval.nuspec"
+      ]
+    },
+    "App.Utils/1.0.0": {
+      "type": "project",
+      "path": "../App.Utils/App.Utils.csproj",
+      "msbuildProject": "../App.Utils/App.Utils.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.5": [
+      "App.Utils >= 1.0.0",
+      "EntityFramework >= 6.2.0",
+      "Newtonsoft.Json >= 11.0.2",
+      "Z.EntityFramework.Plus.EF6 >= 1.12.19"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\CJH\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Entities\\App.Entities.csproj",
+      "projectName": "App.Entities",
+      "projectPath": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Entities\\App.Entities.csproj",
+      "packagesPath": "C:\\Users\\CJH\\.nuget\\packages\\",
+      "outputPath": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Entities\\obj\\",
+      "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\CJH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net45"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net45": {
+          "projectReferences": {
+            "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Utils\\App.Utils.csproj": {
+              "projectPath": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Utils\\App.Utils.csproj"
+            }
+          }
+        }
+      }
+    },
+    "frameworks": {
+      "net45": {
+        "dependencies": {
+          "EntityFramework": {
+            "target": "Package",
+            "version": "[6.2.0, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[11.0.2, )"
+          },
+          "Z.EntityFramework.Plus.EF6": {
+            "target": "Package",
+            "version": "[1.12.19, )"
+          }
+        }
+      }
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      },
+      "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
+        "#import": []
+      }
+    }
+  }
+}

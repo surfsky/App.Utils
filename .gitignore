@@ -1,12 +1,4 @@
 /packages
 /TestResults
-/NetFramework
 /Nugets
-/App.Entities/bin
-/App.Entities/obj
-/App.Utils/obj
-/App.UtilsTests/obj
-/App.Web/obj
-/App.WebCore/obj
-/App.UtilsTests/bin
 /.vs

@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "7TWi2PeFNhoFvwxEbmYmPZZSMcSA6egzPxkXtZ3AxCt48seCjv59F47di/l3dqXjgM+op0x66i6rax5PcjQakA==",
+  "success": true,
+  "projectFilePath": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Entities\\App.Entities.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\CJH\\.nuget\\packages\\entityframework\\6.2.0\\entityframework.6.2.0.nupkg.sha512",
+    "C:\\Users\\CJH\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\CJH\\.nuget\\packages\\z.entityframework.extensions\\4.0.58\\z.entityframework.extensions.4.0.58.nupkg.sha512",
+    "C:\\Users\\CJH\\.nuget\\packages\\z.entityframework.plus.ef6\\1.12.19\\z.entityframework.plus.ef6.1.12.19.nupkg.sha512",
+    "C:\\Users\\CJH\\.nuget\\packages\\z.expressions.eval\\3.1.8\\z.expressions.eval.3.1.8.nupkg.sha512",
+    "C:\\Users\\CJH\\.nuget\\packages\\app.utils\\1.0.0\\app.utils.1.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
