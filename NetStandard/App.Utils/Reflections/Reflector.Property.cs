@@ -115,6 +115,12 @@ namespace App.Utils
         //------------------------------------------------
         // Name
         //------------------------------------------------
+        /// <summary>Get expresson from Func. var exp = ExpressOf((Person p)=> p.Name);</summary>
+        public static Expression<Func<T, TR>> ExpressOf<T, TR>(this Expression<Func<T, TR>> expression)
+        {
+            return expression;
+        }
+
         /// <summary>获取表达式名。GetName&lt;User&gt;(t =&gt; t.Dept.Name);</summary>
         public static string GetName<T>(Expression<Func<T, object>> expression)
         {

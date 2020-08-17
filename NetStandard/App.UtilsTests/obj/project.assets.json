@@ -2499,7 +2499,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "App.Utils": "3.0.0",
+          "App.Utils": "3.0.2",
           "Microsoft.EntityFrameworkCore": "2.2.6",
           "Z.EntityFramework.Plus.EFCore": "2.0.48"
         },
@@ -2510,7 +2510,7 @@
           "bin/placeholder/App.Entities.dll": {}
         }
       },
-      "App.Utils/3.0.0": {
+      "App.Utils/3.0.2": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -3765,7 +3765,7 @@
       ]
     },
     "runtime.native.System.Net.Security/4.3.0": {
-      "sha512": "M2nN92ePS8BgQ2oi6Jj3PlTUzadYSIWLdZrHY1n1ZcW9o4wAQQ6W+aQ2lfq1ysZQfVCgDwY58alUdowrzezztg==",
+      "sha512": "k/SY0C7EKHZk6lyphyKJDzJkuYohjNS1tdv4g3YWwRXTi1rFPkzwHNa+WxvIsZ8sDpwAfnWtJsEtRQyzVXohpw==",
       "type": "package",
       "path": "runtime.native.system.net.security/4.3.0",
       "files": [
@@ -4262,7 +4262,7 @@
       ]
     },
     "System.ComponentModel/4.3.0": {
-      "sha512": "VyGn1jGRZVfxnh8EdvDCi71v3bMXrsu8aYJOwoV7SNDLVhiEqwP86pPMyRGsDsxhXAm2b3o9OIqeETfN5qfezw==",
+      "sha512": "WqlXCO20ubFW9b9AMqjEvLA0I7Ig9NeCwT9yFd8MsOgifuhJ4Ic2wwWrSfCmh3EVIi48ofbd5JXn81GkIi4WrQ==",
       "type": "package",
       "path": "system.componentmodel/4.3.0",
       "files": [
@@ -6948,7 +6948,7 @@
       ]
     },
     "System.Security.Claims/4.3.0": {
-      "sha512": "P/+BR/2lnc4PNDHt/TPBAWHVMLMRHsyYZbU1NphW4HIWzCggz8mJbTQQ3MKljFE7LS3WagmVFuBgoLcFzYXlkA==",
+      "sha512": "WC1tdUinmqBZpVbrRNjDiaJSima+MogNrsZUlORc1uMtju4RFnnMLBZa3ATXPKSL5fij/lxOnfXHp/P69UvwKA==",
       "type": "package",
       "path": "system.security.claims/4.3.0",
       "files": [
@@ -7291,7 +7291,7 @@
       ]
     },
     "System.Security.Principal/4.3.0": {
-      "sha512": "I1tkfQlAoMM2URscUtpcRo/hX0jinXx6a/KUtEQoz3owaYwl3qwsO8cbzYVVnjxrzxjHo3nJC+62uolgeGIS9A==",
+      "sha512": "3hkGgYFVUPknCLwZMEjJVmVQWflnZ5pJYEPKh6hf80+tXoya70exCkApTCL4VT04ghRI5ZaRVzLWCHUJe3I2hg==",
       "type": "package",
       "path": "system.security.principal/4.3.0",
       "files": [
@@ -7859,7 +7859,7 @@
       ]
     },
     "System.Threading.ThreadPool/4.3.0": {
-      "sha512": "SrCOmTvvOOCmJT4BBxdZcwhz6XEMsjBGZvGSVorOxdCznaUNeVotEjDfXGIZ8gcGo00qgPbTV6puHDgcFYl6Iw==",
+      "sha512": "P2w3E7mujZ8BLkzxXYo1w8QqJss9rhQsbNL23FcIBYB02W8NyfBQL5f/evgv55JNjww3Bh615/aaSjMTJpLe6A==",
       "type": "package",
       "path": "system.threading.threadpool/4.3.0",
       "files": [
@@ -8197,7 +8197,7 @@
       "path": "../App.Entities/App.Entities.csproj",
       "msbuildProject": "../App.Entities/App.Entities.csproj"
     },
-    "App.Utils/3.0.0": {
+    "App.Utils/3.0.2": {
       "type": "project",
       "path": "../App.Utils/App.Utils.csproj",
       "msbuildProject": "../App.Utils/App.Utils.csproj"
@@ -8206,7 +8206,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "App.Entities >= 3.0.0",
-      "App.Utils >= 3.0.0",
+      "App.Utils >= 3.0.2",
       "MSTest.TestAdapter >= 2.1.0",
       "MSTest.TestFramework >= 2.1.0",
       "Microsoft.NET.Test.Sdk >= 16.5.0",
@@ -8296,7 +8296,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100-preview.4.20268.1\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -9,7 +9,7 @@
       "App.UtilsTests/1.0.0": {
         "dependencies": {
           "App.Entities": "3.0.0",
-          "App.Utils": "3.0.0",
+          "App.Utils": "3.0.2",
           "MSTest.TestAdapter": "2.1.0",
           "MSTest.TestFramework": "2.1.0",
           "Microsoft.NET.Test.Sdk": "16.5.0",
@@ -1697,7 +1697,7 @@
       },
       "App.Entities/3.0.0": {
         "dependencies": {
-          "App.Utils": "3.0.0",
+          "App.Utils": "3.0.2",
           "Microsoft.EntityFrameworkCore": "2.2.6",
           "Z.EntityFramework.Plus.EFCore": "2.0.48"
         },
@@ -1705,7 +1705,7 @@
           "App.Entities.dll": {}
         }
       },
-      "App.Utils/3.0.0": {
+      "App.Utils/3.0.2": {
         "dependencies": {
           "Jint": "2.11.58",
           "Microsoft.CSharp": "4.7.0",
@@ -2048,7 +2048,7 @@
     "runtime.native.System.Net.Security/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-M2nN92ePS8BgQ2oi6Jj3PlTUzadYSIWLdZrHY1n1ZcW9o4wAQQ6W+aQ2lfq1ysZQfVCgDwY58alUdowrzezztg==",
+      "sha512": "sha512-k/SY0C7EKHZk6lyphyKJDzJkuYohjNS1tdv4g3YWwRXTi1rFPkzwHNa+WxvIsZ8sDpwAfnWtJsEtRQyzVXohpw==",
       "path": "runtime.native.system.net.security/4.3.0",
       "hashPath": "runtime.native.system.net.security.4.3.0.nupkg.sha512"
     },
@@ -2188,7 +2188,7 @@
     "System.ComponentModel/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-VyGn1jGRZVfxnh8EdvDCi71v3bMXrsu8aYJOwoV7SNDLVhiEqwP86pPMyRGsDsxhXAm2b3o9OIqeETfN5qfezw==",
+      "sha512": "sha512-WqlXCO20ubFW9b9AMqjEvLA0I7Ig9NeCwT9yFd8MsOgifuhJ4Ic2wwWrSfCmh3EVIi48ofbd5JXn81GkIi4WrQ==",
       "path": "system.componentmodel/4.3.0",
       "hashPath": "system.componentmodel.4.3.0.nupkg.sha512"
     },
@@ -2538,7 +2538,7 @@
     "System.Security.Claims/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-P/+BR/2lnc4PNDHt/TPBAWHVMLMRHsyYZbU1NphW4HIWzCggz8mJbTQQ3MKljFE7LS3WagmVFuBgoLcFzYXlkA==",
+      "sha512": "sha512-WC1tdUinmqBZpVbrRNjDiaJSima+MogNrsZUlORc1uMtju4RFnnMLBZa3ATXPKSL5fij/lxOnfXHp/P69UvwKA==",
       "path": "system.security.claims/4.3.0",
       "hashPath": "system.security.claims.4.3.0.nupkg.sha512"
     },
@@ -2608,7 +2608,7 @@
     "System.Security.Principal/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-I1tkfQlAoMM2URscUtpcRo/hX0jinXx6a/KUtEQoz3owaYwl3qwsO8cbzYVVnjxrzxjHo3nJC+62uolgeGIS9A==",
+      "sha512": "sha512-3hkGgYFVUPknCLwZMEjJVmVQWflnZ5pJYEPKh6hf80+tXoya70exCkApTCL4VT04ghRI5ZaRVzLWCHUJe3I2hg==",
       "path": "system.security.principal/4.3.0",
       "hashPath": "system.security.principal.4.3.0.nupkg.sha512"
     },
@@ -2678,7 +2678,7 @@
     "System.Threading.ThreadPool/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-SrCOmTvvOOCmJT4BBxdZcwhz6XEMsjBGZvGSVorOxdCznaUNeVotEjDfXGIZ8gcGo00qgPbTV6puHDgcFYl6Iw==",
+      "sha512": "sha512-P2w3E7mujZ8BLkzxXYo1w8QqJss9rhQsbNL23FcIBYB02W8NyfBQL5f/evgv55JNjww3Bh615/aaSjMTJpLe6A==",
       "path": "system.threading.threadpool/4.3.0",
       "hashPath": "system.threading.threadpool.4.3.0.nupkg.sha512"
     },
@@ -2743,7 +2743,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "App.Utils/3.0.0": {
+    "App.Utils/3.0.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

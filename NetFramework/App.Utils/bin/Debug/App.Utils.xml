@@ -692,6 +692,9 @@
         <member name="M:App.Utils.Reflector.SetValue``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},``1)">
             <summary>设置对象的属性值（强类型版本）。user.SetPropertyValue(t=> t.Name, "Cherry");</summary>
         </member>
+        <member name="M:App.Utils.Reflector.ExpressOf``2(System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>Get expresson from Func. var exp = ExpressOf((Person p)=> p.Name);</summary>
+        </member>
         <member name="M:App.Utils.Reflector.GetName``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">
             <summary>获取表达式名。GetName&lt;User&gt;(t =&gt; t.Dept.Name);</summary>
         </member>
@@ -1158,17 +1161,24 @@
         <member name="M:App.Utils.IO.DeleteDirectory(System.String)">
             <summary>删除目录及子文件</summary>
         </member>
-        <member name="M:App.Utils.IO.GetBytes(System.String)">
+        <member name="M:App.Utils.IO.ReadFileBytes(System.String)">
             <summary>读取文件到字节数组</summary>
+        </member>
+        <member name="M:App.Utils.IO.ReadFileText(System.String)">
+            <summary>读取文件文本</summary>
+        </member>
+        <member name="M:App.Utils.IO.DeleteFile(System.String)">
+            <summary>删除文件</summary>
         </member>
         <member name="M:App.Utils.IO.GetFileMD5(System.String)">
             <summary>获取文件的MD5哈希信息</summary>
             <param name="filePath"></param>
             <returns>十六进制字符串</returns>
         </member>
-        <member name="M:App.Utils.IO.WriteFile(System.String,System.String)">
-            <summary>写文件（附加）</summary>
+        <member name="M:App.Utils.IO.WriteFile(System.String,System.String,System.Boolean)">
+            <summary>写文件（新建或附加）</summary>
             <param name="filePath">文件的物理路径</param>
+            <param name="append">是否附加再末尾，还是新建文件</param>
         </member>
         <member name="M:App.Utils.IO.MergeFiles(System.Collections.Generic.List{System.String},System.String,System.Boolean)">
             <summary>合并文件</summary>

@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Linq.Expressions;
 using System.ComponentModel;
+using static App.Utils.Reflector;
+
 
 namespace App.Utils.Tests
 {
@@ -167,13 +169,23 @@ namespace App.Utils.Tests
             Assert.AreEqual(typeof(Giant).IsType(typeof(Person)), true);
         }
 
+
+        static Expression<Func<T, TR>> expressof<T, TR>(Expression<Func<T, TR>> expression)
+        {
+            return expression;
+        }
+
+
         [TestMethod()]
         public void GetNameTest()
         {
-            //var exp = (Person p) => p.Name;
-            Expression<Func<Person, object>> exp1 = t => t.Name;
+            //var exp = (Person p) => p.Name;                       // fail
+            Expression<Func<Person, object>> exp1 = t => t.Name;    // ok
+            var exp = expressof((Person p) => p.Name);              // ok
+            var exp2 = Reflector.ExpressOf((Person p) => p.Name);   // ok
+
             Assert.AreEqual(exp1.GetName(), "Name");
-            Assert.AreEqual(Reflector.GetName<Person>(t=> t.Name), "Name");
+            Assert.AreEqual(GetName<Person>(t=> t.Name), "Name");
             Assert.AreEqual(Reflector.GetName<Person>(t => t.Father.Name), "Father.Name");
         }
 

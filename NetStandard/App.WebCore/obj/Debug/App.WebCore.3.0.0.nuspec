@@ -13,7 +13,7 @@
     <repository type="git" url="http://github.com/surfsky/App.Utils" />
     <dependencies>
       <group targetFramework=".NETStandard2.0">
-        <dependency id="App.Utils" version="3.0.0" exclude="Build,Analyzers" />
+        <dependency id="App.Utils" version="3.0.2" exclude="Build,Analyzers" />
         <dependency id="Microsoft.AspNetCore.Authentication.Cookies" version="2.2.0" exclude="Build,Analyzers" />
         <dependency id="Microsoft.AspNetCore.Hosting.Abstractions" version="2.2.0" exclude="Build,Analyzers" />
         <dependency id="Microsoft.AspNetCore.Http.Abstractions" version="2.2.0" exclude="Build,Analyzers" />
@@ -22,6 +22,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="\\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetStandard\App.WebCore\bin\Debug\netstandard2.0\App.WebCore.dll" target="lib\netstandard2.0\App.WebCore.dll" />
+    <file src="/Users/CJH/Downloads/Dev/AppPlat/App.Utils/App.Utils-github/NetStandard/App.WebCore/bin/Debug/netstandard2.0/App.WebCore.dll" target="lib/netstandard2.0/App.WebCore.dll" />
   </files>
 </package>

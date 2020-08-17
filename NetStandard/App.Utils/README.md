@@ -24,3 +24,10 @@ public void ConfigureServices(IServiceCollection services)
         新增 Cacher 类
     修正 JsEvaluator, CsEvaluate, PinYin
 
+3.0.1
+    Add Reflector.ExpressOf()
+
+3.0.2
+    *IO.WriteFile
+    +IO.ReadFileText
+    +IO.ReadFileBytes
