@@ -24,7 +24,7 @@ namespace App.Utils
             if (queryString.IsEmpty())
                 return url;
             var u = new Url(url);
-            var dict = queryString.ParseQueryDict();
+            var dict = queryString.ParseDict();
             foreach (var key in dict.Keys)
                 u[key] = dict[key];
             return u.ToString();

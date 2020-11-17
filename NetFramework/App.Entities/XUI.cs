@@ -41,7 +41,7 @@ namespace App.Entities
         // 缓存
         //-----------------------------------------------
         /// <summary>所有（有缓存）</summary>
-        public new static List<XUI> All => IO.GetCache(AllCacheName, () =>
+        public new static List<XUI> All => IO.GetCache(CacheAllName, () =>
         {
             var items = Set.OrderBy(m => m.Name).ToList();
             foreach (var item in items)

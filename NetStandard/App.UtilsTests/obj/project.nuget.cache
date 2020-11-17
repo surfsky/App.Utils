@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HRPnW5uFjmnNpWtYvDcFtZJF4chPJNvAJWZC/q6j23O6z/dVZCqLwUfwJ7fUsv7pfwJbct8VJorpXTf8gp62RA==",
+  "dgSpecHash": "E2SAXgZTxzZGk0L1S1erIP196WS5z1jUEtjH33c+QMo25fsaOslojoJwf9vUG6b0aa3TfyxEy8Z5ofI4wwOAMQ==",
   "success": true,
   "projectFilePath": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetStandard\\App.UtilsTests\\App.UtilsTests.csproj",
   "expectedPackageFiles": [
@@ -147,7 +147,9 @@
     "C:\\Users\\CJH\\.nuget\\packages\\z.entityframework.extensions.efcore\\2.7.64\\z.entityframework.extensions.efcore.2.7.64.nupkg.sha512",
     "C:\\Users\\CJH\\.nuget\\packages\\z.entityframework.plus.efcore\\2.0.48\\z.entityframework.plus.efcore.2.0.48.nupkg.sha512",
     "C:\\Users\\CJH\\.nuget\\packages\\z.expressions.eval\\3.1.10\\z.expressions.eval.3.1.10.nupkg.sha512",
-    "C:\\Users\\CJH\\.nuget\\packages\\zkweb.system.drawing\\4.0.1\\zkweb.system.drawing.4.0.1.nupkg.sha512"
+    "C:\\Users\\CJH\\.nuget\\packages\\zkweb.system.drawing\\4.0.1\\zkweb.system.drawing.4.0.1.nupkg.sha512",
+    "C:\\Users\\CJH\\.nuget\\packages\\app.utils\\3.0.2\\app.utils.3.0.2.nupkg.sha512",
+    "C:\\Users\\CJH\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
   ],
   "logs": []
 }

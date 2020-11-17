@@ -148,7 +148,7 @@ namespace App.Utils.Tests
         public void ParseQueryDictTest()
         {
             var txt = "id=1&name=Kevin";
-            var dict = txt.ParseQueryDict();
+            var dict = txt.ParseDict();
             var id = dict["id"];
             var age = dict["age"];
             dict["age"] = "5";

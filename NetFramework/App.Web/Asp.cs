@@ -165,6 +165,26 @@ namespace App.Web
         //-------------------------------------------
         // Url & Path
         //-------------------------------------------
+        /// <summary>获取服务器或网络图片</summary>
+        /// <param name="url">可用~/，也可以用完整的http地址</param>
+        public static Image GetServerOrNetworkImage(string url)
+        {
+            if (!IsRelative(url))
+                return HttpHelper.GetNetworkImage(url);
+            else if (IsWeb)
+                return Painter.LoadImage(Asp.Server.MapPath(url));
+            return null;
+        }
+
+        /// <summary>是否是相对路径（以~./等开头）</summary>
+        public static bool IsRelative(this string url)
+        {
+            if (url.StartsWith("~/") || url.StartsWith(".") || url.StartsWith("/"))
+                return true;
+            return false;
+        }
+
+
         /// <summary>是否是本网站文件（如果以.~/开头或host相同是本站图片）</summary>
         public static bool IsSiteFile(this string url)
         {

@@ -24,7 +24,7 @@ namespace App.Utils
             if (queryString.IsEmpty())
                 return url;
             var u = new Url(url);
-            var dict = queryString.ParseQueryDict();
+            var dict = queryString.ParseDict();
             foreach (var key in dict.Keys)
                 u[key] = dict[key];
             return u.ToString();
@@ -422,6 +422,17 @@ namespace App.Utils
                 return string.Format(format, (double)bytes / 1024) + " KB";
             else
                 return string.Format("{0} bytes", bytes);
+        }
+
+        /// <summary>转化为距离文本（如 1.3 km）</summary>
+        public static string ToDistanceText(this double d, string format = "{0:#.##}")
+        {
+            if (d < 0)
+                return string.Format(format, d) + " km";
+            else if (d >= 1)
+                return string.Format(format, d) + " km";
+            else 
+                return string.Format(format, d * 1000) + " m";
         }
 
         //--------------------------------------------------

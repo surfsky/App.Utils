@@ -122,6 +122,18 @@ function do() {
         }
 
         [TestMethod()]
+        public void ToDistanceTextTest()
+        {
+            double size1 = 1.23;
+            double size2 = 0.23;
+            double size3 = 0.0018;
+            Assert.AreEqual(size1.ToDistanceText(), "1.23 km");
+            Assert.AreEqual(size2.ToDistanceText(), "230 m");
+            Assert.AreEqual(size3.ToDistanceText(), "1.8 m");
+            Assert.AreEqual(size3.ToDistanceText("{0:0.00}"), "1.80 m");
+        }
+
+        [TestMethod()]
         public void AddQueryStringTest()
         {
             var url = "a.aspx?a=1";

@@ -277,7 +277,7 @@ namespace App.Utils
 
         /// <summary>Parse querystring to dict（eg. id=1&amp;name=Kevin）</summary>
         /// <param name="text">Querystring, eg. id=1&amp;name=Kevin</param>
-        public static FreeDictionary<string, string> ParseQueryDict(this string text)
+        public static FreeDictionary<string, string> ParseDict(this string text)
         {
             var dict = new FreeDictionary<string, string>();
             if (text.IsEmpty())

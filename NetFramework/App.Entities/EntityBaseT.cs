@@ -129,17 +129,17 @@ namespace App.Entities
         public static T Instance => IO.GetCache(typeof(T).Name, () => Set.FirstOrDefault());
 
         /// <summary>所有数据的缓存</summary>
-        public static List<T> All => IO.GetCache(AllCacheName, () => ValidSet.ToList());
+        public static List<T> All => IO.GetCache(CacheAllName, () => ValidSet.ToList());
 
         /// <summary>所有数据缓存名称</summary>
-        public static string AllCacheName => string.Format("All{0}s", typeof(T).Name);
+        public static string CacheAllName => string.Format("All{0}s", typeof(T).Name);
 
 
         /// <summary>清除该实体的全部数据缓存</summary>
         public static void ClearCache()
         {
             IO.RemoveCache(typeof(T).Name);
-            IO.RemoveCache(AllCacheName);
+            IO.RemoveCache(CacheAllName);
         }
         /// <summary>加载该实体的全部数据缓存</summary>
         public static void LoadCache()
@@ -210,6 +210,11 @@ namespace App.Entities
             return Set.Where(condition).FirstOrDefault();
         }
 
+        /// <summary>获取详情（包括关联表信息）。注意重载该方法的话，参数只能有一个id，否则自动化表单会出错</summary>
+        public static T GetDetail(long id)
+        {
+            return IncludeSet.FirstOrDefault(t => t.ID == id);
+        }
 
         /// <summary>查找指定ID的数据列表</summary>
         public static IQueryable<T> Search(List<long> ids)
@@ -321,11 +326,6 @@ namespace App.Entities
         // 几个虚拟方法，如有需要请在子类实现。
         // 经测试，静态方法不支持virtual，所以在子类实现时请加个 new 关键字
         //---------------------------------------------
-        /// <summary>获取详情（包括关联表信息）</summary>
-        public static T GetDetail(long id)
-        {
-            return IncludeSet.FirstOrDefault(t => t.ID == id);
-        }
 
         /*
         /// <summary>递归删除（包括子表数据）</summary>

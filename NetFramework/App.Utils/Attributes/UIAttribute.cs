@@ -128,13 +128,6 @@ namespace App.Utils
             this.Title = title;
             this.Format = formatString;
         }
-        public UIAttribute(string title, ExportMode export) : this("", title, export) { }
-        public UIAttribute(string group, string title, ExportMode export)
-        {
-            this.Group = group;
-            this.Title = title;
-            this.Export = export;
-        }
         public UIAttribute(string title, Type valueType) : this("", title, valueType) { }
         public UIAttribute(string group, string title, Type valueType)
         {
@@ -191,5 +184,26 @@ namespace App.Utils
             this.Title = title;
             return this;
         }
+        public UIAttribute SetFormat(string format)
+        {
+            if (format.IndexOf("{0:") == -1)
+                format = "{0:" + format + "}";
+            this.Format = format;
+            return this;
+        }
+
+        /// <summary>添加弹窗选择器成员（窗口指定 UrlTemplate）</summary>
+        public UIAttribute SetEditorWin(Type valueType, string textField, string urlTemplate, string title = "")
+        {
+            this.Editor = EditorType.Win;
+            this.ValueType = valueType;
+            this.TextField = textField;
+            this.UrlTemplate = urlTemplate;
+            if (title.IsNotEmpty())
+                this.Title = title;
+            return this;
+        }
+
+
     }
 }

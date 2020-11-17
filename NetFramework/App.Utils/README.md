@@ -306,3 +306,12 @@
 + Asp.Host, Asp.HostFolder
 * Reflector.TryXXX -> XXX
 * Net.Ping() not throw exception
+
+
+
+2.2.1
+
+* ParseQueryDict -> ParseDict
++ double.ToDistanceText
++ GetOriginalException
++ SearcherAttribute -> SearchAttribute

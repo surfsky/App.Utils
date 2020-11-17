@@ -11,12 +11,11 @@ namespace App.Utils
     [Flags, UI("数据导出方式")]
     public enum ExportMode : int
     {
-        [UI("不导出")] None = 0,
-        [UI("简单")] Simple = 1,
+        //[UI("不导出")] None = 0,
+        //[UI("简单")] Simple = 1,
         [UI("普通")] Normal = 2,
         [UI("详细")] Detail = 4,
-        [UI("全部")] All = Simple | Normal | Detail,
-        //[UI("模型")] Schema
+        //[UI("全部")] All = Simple | Normal | Detail,
     }
 
     /// <summary>页面访问模式</summary>
@@ -144,8 +143,8 @@ namespace App.Utils
         /// <summary>表现为树</summary>
         public bool Tree { get; set; } = false;
 
-        /// <summary>数据导出时机</summary>
-        public ExportMode Export { get; set; } = ExportMode.All;
+        /// <summary>数据导出时机（已废除2020-11）</summary>
+        //public ExportMode Export { get; set; } = ExportMode.All;
 
         /// <summary>URL模板（弹窗或调整页面时有用）</summary>
         public string UrlTemplate { get; set; }

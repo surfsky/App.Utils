@@ -132,7 +132,7 @@ namespace App.Utils
                 }
 
                 // 解析参数部分
-                Dict = queryString.ParseQueryDict();
+                Dict = queryString.ParseDict();
 
                 // 分析前面的路径部分
                 int k = PurePath.LastIndexOf('.');

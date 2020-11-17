@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Text;
 using System.Linq;
 using System.Reflection;
 using System.Web;
@@ -169,9 +170,10 @@ namespace App.Utils
             // 绘制字符图片(描边、填充一半底部)
             var bitmap = new Bitmap((int)rectFull.Width, (int)rectFull.Height);
             var g2 = Graphics.FromImage(bitmap);
-            g2.InterpolationMode = InterpolationMode.HighQualityBicubic;
-            g2.SmoothingMode = SmoothingMode.AntiAlias;
-            g2.CompositingQuality = CompositingQuality.HighQuality;
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+            g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+            g.CompositingQuality = CompositingQuality.HighQuality;
+            g.TextRenderingHint = TextRenderingHint.AntiAlias;
             g2.DrawPath(pen, path);           // 描边
             g2.FillRegion(brush, region);     // 填充一半底部
 

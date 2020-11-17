@@ -61,3 +61,6 @@
 \\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.Entities\obj\Debug\App.Entities.csproj.CopyComplete
 \\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.Entities\obj\Debug\App.Entities.dll
 \\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.Entities\obj\Debug\App.Entities.pdb
+\\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.Entities\bin\Debug\ZKWeb.System.Drawing.dll
+\\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.Entities\bin\Debug\App.Web.dll
+\\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.Entities\bin\Debug\App.Web.pdb

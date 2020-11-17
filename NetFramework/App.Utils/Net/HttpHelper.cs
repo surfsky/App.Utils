@@ -261,25 +261,14 @@ namespace App.Utils
         // 获取网络图片
         //------------------------------------------------------------
         /// <summary>获取网络图片的缩略图</summary>
+        /// <param name="url">带 http 的完整图片路径</param>
         public static Image GetThumbnail(string url, int w, int? h = null)
         {
-            Image img = HttpHelper.GetServerOrNetworkImage(url);
+            //Image img = HttpHelper.GetServerOrNetworkImage(url);
+            var img = GetNetworkImage(url);
             return Painter.Thumbnail(img, w, h);
         }
 
-        /// <summary>获取服务器或网络图片</summary>
-        /// <param name="url">可用~/，也可以用完整的http地址</param>
-        public static Image GetServerOrNetworkImage(string url)
-        {
-            if (url.StartsWith("~/") || url.StartsWith(".") || url.StartsWith("/"))
-            {
-                if (Asp.IsWeb)
-                    return Painter.LoadImage(Asp.Server.MapPath(url));
-            }
-            else
-                return HttpHelper.GetNetworkImage(url);
-            return null;
-        }
 
         /// <summary>获取网络图片</summary>
         public static Bitmap GetNetworkImage(string url)

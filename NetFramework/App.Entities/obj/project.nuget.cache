@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "lnKAbIwXxIWkMn4CLYdZk3F5aEC+6irYrBHiZ8ob598oWx8Ov6ymWNrXJpbBCVpwyYR+sFtZc8OqyfHXxhvvDQ==",
+  "dgSpecHash": "qVRuBz3/yPBB8oISeVvr610AhkROwvoB42+QRETGXGkfrQVX2ucNaZpuIX7pcRBNvNUfZyI0DGi2dS7kKL6IGg==",
   "success": true,
   "projectFilePath": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Entities\\App.Entities.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\CJH\\.nuget\\packages\\z.entityframework.extensions\\4.0.58\\z.entityframework.extensions.4.0.58.nupkg.sha512",
     "C:\\Users\\CJH\\.nuget\\packages\\z.entityframework.plus.ef6\\1.12.19\\z.entityframework.plus.ef6.1.12.19.nupkg.sha512",
     "C:\\Users\\CJH\\.nuget\\packages\\z.expressions.eval\\3.1.8\\z.expressions.eval.3.1.8.nupkg.sha512",
+    "C:\\Users\\CJH\\.nuget\\packages\\zkweb.system.drawing\\4.0.1\\zkweb.system.drawing.4.0.1.nupkg.sha512",
     "C:\\Users\\CJH\\.nuget\\packages\\app.utils\\1.0.0\\app.utils.1.0.0.nupkg.sha512"
   ],
   "logs": []

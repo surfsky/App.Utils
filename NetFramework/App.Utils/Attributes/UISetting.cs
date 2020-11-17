@@ -120,8 +120,28 @@ namespace App.Utils
                 this.Items.Add(ui);
             }
         }
+
+        /// <summary>获取配置项</summary>
+        public UIAttribute Get(string field)
+        {
+            return this.Items.FirstOrDefault(t => t.Name == field);
+        }
+
+        /// <summary>创建配置项</summary>
+        public UIAttribute Create(string name, string title)
+        {
+            var attr = new UIAttribute();
+            attr.Name = name;
+            attr.Title = title;
+            Items.Add(attr);
+            return attr;
+        }
     }
 
+
+    //------------------------------------------------
+    // 泛型版本
+    //------------------------------------------------
     /// <summary>UI配置信息（泛型版本）</summary>
     public class UISetting<T> : UISetting
     {
@@ -163,10 +183,10 @@ namespace App.Utils
                 attr = p.GetPropertyUI();
                 var name = field.GetName();
                 if (attr.Name != name)
-                    attr.Name = name;               // t.Dept.Name => "Dept.Name"
+                    attr.Name = name;       // t.Dept.Name => "Dept.Name"
                 this.Items.Add(attr);
             }
-            attr.Title = field.GetTitle();  // 部门名称
+            attr.Title = field.GetTitle();
 
             return attr;
         }
@@ -196,8 +216,7 @@ namespace App.Utils
             return GetOrCreate(field).SetColumn(column, width, title, sort, tag);
         }
 
-
-        /// <summary>添加弹出网格成员</summary>
+        /// <summary>添加弹出窗口成员（窗口自定义 UrlTemplate）</summary>
         public UIAttribute SetColumnWin(Expression<Func<T, object>> field, string text, Expression<Func<T, object>> textField, string urlTemplate, int? width, string title, bool? sort = null, Size? winSize = null)
         {
             var attr = SetColumn(field, width, ColumnType.Win, title, sort, null);
@@ -208,18 +227,8 @@ namespace App.Utils
             return attr;
         }
 
-        /// <summary>添加弹出表单成员（AuthForm)</summary>
-        public UIAttribute SetColumnWinForm(Expression<Func<T, object>> field, string text, Expression<Func<T, object>> textField, Type valueType, int? width, string title, bool? sort = null, Size? winSize = null)
-        {
-            var attr = SetColumn(field, width, ColumnType.WinForm, title, sort, null);
-            attr.Text = text;
-            attr.TextField = textField.GetName();
-            attr.ValueType = valueType;
-            attr.WinSize = winSize ?? new Size(1000, 800);
-            return attr;
-        }
-
-        /// <summary>添加弹出网格成员（AutoGrid）</summary>
+        /*
+        /// <summary>添加弹出网格窗口成员（窗口为网格，由 ValueType 自动生成）</summary>
         public UIAttribute SetColumnWinGrid(Expression<Func<T, object>> field, string text, Expression<Func<T, object>> textField, Type valueType, int? width, string title, bool? sort = null, Size? winSize = null)
         {
             var attr = SetColumn(field, width, ColumnType.WinGrid, title, sort, null);
@@ -230,6 +239,21 @@ namespace App.Utils
             attr.WinSize = winSize ?? new Size(1000, 800);
             return attr;
         }
+
+
+        /// <summary>添加弹出表单成员（窗口为表单，由 ValueType 自动生成）)</summary>
+        public UIAttribute SetColumnWinForm(Expression<Func<T, object>> field, string text, Expression<Func<T, object>> textField, Type valueType, int? width, string title, bool? sort = null, Size? winSize = null)
+        {
+            var attr = SetColumn(field, width, ColumnType.WinForm, title, sort, null);
+            attr.Text = text;
+            attr.TextField = textField.GetName();
+            attr.ValueType = valueType;
+            attr.WinSize = winSize ?? new Size(1000, 800);
+            return attr;
+        }
+        */
+
+
 
 
         /// <summary>设置树列成员</summary>
@@ -272,7 +296,7 @@ namespace App.Utils
             return GetOrCreate(field).SetEditor(EditorType.Image, size);
         }
 
-        /// <summary>添加网格成员</summary>
+        /// <summary>添加网格成员（网格自动生成）</summary>
         /// <param name="field">关联属性。如 UniID</param>
         /// <param name="valueType">值类型。如 typeof(Res)</param>
         /// <param name="query">查询参数。如 key={0}</param>
@@ -287,7 +311,7 @@ namespace App.Utils
             return attr;
         }
 
-        /// <summary>添加面板成员</summary>
+        /// <summary>添加面板成员（面板指定 UrlTemplate）</summary>
         /// <param name="field">关联属性。如 UniID</param>
         /// <param name="urlTemplate">URL模板</param>
         /// <remarks>创建控件方法见：FormRender.CreatePanel</remarks>
@@ -328,7 +352,7 @@ namespace App.Utils
         }
 
 
-        /// <summary>添加弹窗选择器成员</summary>
+        /// <summary>添加弹窗选择器成员（窗口指定 UrlTemplate）</summary>
         public UIAttribute SetEditorWin(Expression<Func<T, object>> field, Type valueType, string textField, string urlTemplate, string title="")
         {
             var attr = SetEditor(field, EditorType.Win);
@@ -340,7 +364,7 @@ namespace App.Utils
             return attr;
         }
 
-        /// <summary>添加弹出网格成员</summary>
+        /// <summary>添加弹出网格成员（网格自动生成）</summary>
         /// <param name="valueType">值类型。如 DAL.Res</param>
         /// <param name="textField">值类型中的文本域名称。如 Name</param>
         /// <param name="query">查询参数.如resKey={0}</param>

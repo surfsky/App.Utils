@@ -130,22 +130,29 @@ namespace App.Entities
         //---------------------------------------------
         /// <summary>获取导出对象（可用于接口数据输出）</summary>
         /// <param name="type">导出详细信息还是概述信息</param>
-        /// <remarks>
-        /// - 统一用 IExport 接口，以功能换性能。
-        /// - 不采用 Expression 的原因：有些复杂导出属性要用方法生成，无法被EF解析。
-        /// - 对于字段实在太多的类，如有有性能问题，可先 Select 后再 Export，注意字段要一致。
-        /// - 可标注属性 [UI("xx", Export=ExportType.Detail]，并用默认 Export 方法导出。
-        /// </remarks>
+        /// 
         /// <example>
         /// var item = User.Get(..).Export();
         /// var items = User.Search(....).ToList().Cast(t => t.Export());
         /// </example>
-        /// <todo>
-        /// 现有的Export区分三种类型的代码非常繁琐（参考User.Export），故可考虑自动拼装属性，逻辑如：
-        /// - 子类根据 ExportType 分别导出各自属性（不重叠）
+        /// 
+        /// <remarks>
+        /// - 统一用 IExport 接口，以功能换性能。
+        /// - 不采用 Expression 的原因：有些复杂导出属性要用方法生成，无法被EF解析。
+        /// - 对于字段实在太多的类，如有有性能问题，可先 Select 后自己写 Export 逻辑。
+        /// 
+        /// 关于导出数据有三态
+        /// - 导出数据有三态：Detail 包含 Normal， Normal 包含 Simple。但大部分只用到了2态。
+        /// - 此项目仅 User 用到了三态（可考虑为 User单独写 ExportSimple() 方法）
+        /// - 在找到其它解决方法之前，先保持此结构
+        /// 
+        /// 考虑自动拼装属性，逻辑如：
+        /// - 子类根据 ExportType 分别导出各自属性（不重叠），如用3个方法实现
         /// - 基类的方法自动组装这些字段（Detail包含Normal, Normal包含Simple）
         /// - 可用字典，或用动态类实现该逻辑
-        /// </todo>
+        /// - 算了，太精巧了不容易维护，还是要求每个实体类都手工写 Export 方法
+        /// 
+        /// </remarks>
         public virtual object Export(ExportMode type = ExportMode.Normal)
         {
             return this;
@@ -183,7 +190,7 @@ namespace App.Entities
         {
             foreach (var m in type.GetMethods())
             {
-                if (m.GetAttribute<SearcherAttribute>() != null)
+                if (m.GetAttribute<SearchAttribute>() != null)
                     return m;
             }
             return type.GetMethods("Search", false).FirstOrDefault();
@@ -195,7 +202,7 @@ namespace App.Entities
         // 全局唯一键
         //---------------------------------------------
         [NotMapped, JsonIgnore]
-        [UI("全局唯一ID", Column = ColumnType.None, Editor = EditorType.None, Export = ExportMode.None)]
+        [UI("全局唯一ID", Column = ColumnType.None, Editor = EditorType.None)]
         public string UniID
         {
             get
@@ -216,7 +223,7 @@ namespace App.Entities
         // 操作历史
         //---------------------------------------------
         [NotMapped]
-        [UI("操作历史", Column = ColumnType.None, Editor = EditorType.None, Export = ExportMode.Detail)]
+        [UI("操作历史", Column = ColumnType.None, Editor = EditorType.None)]
         public List<History> Histories
         {
             get
@@ -228,7 +235,7 @@ namespace App.Entities
         }
 
         [NotMapped]
-        [UI("最后操作历史", Column = ColumnType.None, Editor = EditorType.None, Export = ExportMode.Detail)]
+        [UI("最后操作历史", Column = ColumnType.None, Editor = EditorType.None)]
         public History LastHistory
         {
             get
@@ -268,7 +275,7 @@ namespace App.Entities
         //---------------------------------------------
         // 资源
         [NotMapped]
-        [UI("所有附件", Column = ColumnType.None, Editor = EditorType.None, Export = ExportMode.Detail)]
+        [UI("所有附件", Column = ColumnType.None, Editor = EditorType.None)]
         public List<Res> Reses
         {
             get
@@ -279,7 +286,7 @@ namespace App.Entities
             }
         }
         [NotMapped, JsonIgnore]
-        [UI("图片附件", Column = ColumnType.None, Editor = EditorType.None, Export = ExportMode.Detail)]
+        [UI("图片附件", Column = ColumnType.None, Editor = EditorType.None)]
         public List<Res> Images
         {
             get
@@ -290,7 +297,7 @@ namespace App.Entities
             }
         }
         [NotMapped, JsonIgnore]
-        [UI("文件附件", Column = ColumnType.None, Editor = EditorType.None, Export = ExportMode.Detail)]
+        [UI("文件附件", Column = ColumnType.None, Editor = EditorType.None)]
         public List<Res> Files
         {
             get

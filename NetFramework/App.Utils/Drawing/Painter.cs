@@ -20,7 +20,7 @@ namespace App.Utils
         {
             if (iconUrl.IsNotEmpty())
             {
-                var icon = HttpHelper.GetServerOrNetworkImage(iconUrl);
+                Image icon = HttpHelper.GetNetworkImage(iconUrl);
                 int s = img.Width / 5;
                 icon = Painter.Thumbnail(icon, s, s);
                 var point = new Point((img.Width - s) / 2, (img.Height - s) / 2);

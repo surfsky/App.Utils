@@ -26,3 +26,6 @@
 \\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.UtilsTests\obj\Debug\App.UtilsTests.csproj.CopyComplete
 \\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.UtilsTests\obj\Debug\App.UtilsTests.dll
 \\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.UtilsTests\obj\Debug\App.UtilsTests.pdb
+\\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.UtilsTests\bin\Debug\ZKWeb.System.Drawing.dll
+\\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.UtilsTests\bin\Debug\App.Web.dll
+\\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.UtilsTests\bin\Debug\App.Web.pdb

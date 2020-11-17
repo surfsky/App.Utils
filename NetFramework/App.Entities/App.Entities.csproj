@@ -73,6 +73,10 @@
       <Project>{c887d0a1-20f6-44da-87df-ea8d45ace744}</Project>
       <Name>App.Utils</Name>
     </ProjectReference>
+    <ProjectReference Include="..\App.Web\App.Web.csproj">
+      <Project>{0AE940DE-0F8C-4840-946D-18CB714BE1BE}</Project>
+      <Name>App.Web</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

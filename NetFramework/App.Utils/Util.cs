@@ -92,7 +92,13 @@ namespace App.Utils
                 return falseValue;
         }
 
-
+        /// <summary>获取原始错误</summary>
+        public static Exception GetOriginalException(this Exception ex)
+        {
+            if (ex.InnerException == null) 
+                return ex;
+            return GetOriginalException(ex.InnerException);
+        }
 
     }
 }

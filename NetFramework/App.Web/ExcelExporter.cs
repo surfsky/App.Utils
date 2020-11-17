@@ -5,8 +5,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Web;
+using App.Utils;
 
-namespace App.Utils
+namespace App.Web
 {
     /// <summary>
     /// Excel 操作辅助类

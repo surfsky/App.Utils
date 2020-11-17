@@ -64,7 +64,7 @@
   <ItemGroup>
     <Compile Include="UtilConfig.cs" />
     <Compile Include="Attributes\ScopeAttribute.cs" />
-    <Compile Include="Attributes\SearcherAttribute.cs" />
+    <Compile Include="Attributes\SearchAttribute.cs" />
     <Compile Include="Attributes\TAttribute.cs" />
     <Compile Include="Attributes\UIExtension.cs" />
     <Compile Include="Attributes\UISetting.cs" />
@@ -114,10 +114,6 @@
     <Compile Include="Net\SocketClient.cs" />
     <Compile Include="Net\SocketData.cs" />
     <Compile Include="Threads\ThreadPond.cs" />
-    <Compile Include="Web\Asp.IO.cs" />
-    <Compile Include="Web\Asp.Data.cs" />
-    <Compile Include="Web\AuthHelper.cs" />
-    <Compile Include="Web\CookieHelper.cs" />
     <Compile Include="Base\DateTimeHelper.cs" />
     <Compile Include="Math\DESEncrypt.cs" />
     <Compile Include="Drawing\Painter.cs" />
@@ -136,14 +132,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reflections\Reflector.cs" />
     <Compile Include="Base\RegexHelper.cs" />
-    <Compile Include="Web\ExcelExporter.cs" />
-    <Compile Include="Web\ResourceHelper.cs" />
-    <Compile Include="Web\ScriptHelper.cs" />
     <Compile Include="Base\StringHelper.cs" />
     <Compile Include="Attributes\UIAttribute.cs" />
-    <Compile Include="Web\Asp.cs" />
     <Compile Include="Net\Url.cs" />
-    <Compile Include="Web\VisitCounter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Utils.config" />
