@@ -1,17 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "EM73H/W8oXyz/BqR+KZtw0/xxMGtcNyT9bTBfJCLXfnUPBey7Kd2ZN33NcrsI3ECfVuO0hnDs0w7j7iJvFiuxQ==",
+  "dgSpecHash": "gDQiYhTJmTTbSwddr7tts1MqHK2b6mZbYcvstoyJF6ikT8opwm56ABN4FT2BFuYkORbm+NTjs/jrT8CuwTe7Xw==",
   "success": true,
   "projectFilePath": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.UtilsTests\\App.UtilsTests.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\CJH\\.nuget\\packages\\entityframework\\6.2.0\\entityframework.6.2.0.nupkg.sha512",
     "C:\\Users\\CJH\\.nuget\\packages\\mstest.testadapter\\2.1.0\\mstest.testadapter.2.1.0.nupkg.sha512",
     "C:\\Users\\CJH\\.nuget\\packages\\mstest.testframework\\2.1.0\\mstest.testframework.2.1.0.nupkg.sha512",
-    "C:\\Users\\CJH\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
-    "C:\\Users\\CJH\\.nuget\\packages\\z.entityframework.extensions\\4.0.58\\z.entityframework.extensions.4.0.58.nupkg.sha512",
-    "C:\\Users\\CJH\\.nuget\\packages\\z.entityframework.plus.ef6\\1.12.19\\z.entityframework.plus.ef6.1.12.19.nupkg.sha512",
-    "C:\\Users\\CJH\\.nuget\\packages\\z.expressions.eval\\3.1.8\\z.expressions.eval.3.1.8.nupkg.sha512",
-    "C:\\Users\\CJH\\.nuget\\packages\\zkweb.system.drawing\\4.0.1\\zkweb.system.drawing.4.0.1.nupkg.sha512",
     "C:\\Users\\CJH\\.nuget\\packages\\app.utils\\1.0.0\\app.utils.1.0.0.nupkg.sha512"
   ],
   "logs": []

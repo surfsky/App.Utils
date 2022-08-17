@@ -56,7 +56,6 @@
 \\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.Entities\bin\Debug\App.Utils.dll
 \\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.Entities\bin\Debug\App.Utils.pdb
 \\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.Entities\bin\Debug\App.Utils.xml
-\\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.Entities\obj\Debug\App.Entities.csprojAssemblyReference.cache
 \\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.Entities\obj\Debug\App.Entities.csproj.CoreCompileInputs.cache
 \\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.Entities\obj\Debug\App.Entities.csproj.CopyComplete
 \\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.Entities\obj\Debug\App.Entities.dll
@@ -64,3 +63,6 @@
 \\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.Entities\bin\Debug\ZKWeb.System.Drawing.dll
 \\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.Entities\bin\Debug\App.Web.dll
 \\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.Entities\bin\Debug\App.Web.pdb
+\\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.Entities\bin\Debug\App.Entities.xml
+\\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.Entities\bin\Debug\App.Web.xml
+\\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.Entities\obj\Debug\App.Entities.csproj.AssemblyReference.cache

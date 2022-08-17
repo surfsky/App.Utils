@@ -13,8 +13,8 @@ namespace App.Utils
     {
         //[UI("不导出")] None = 0,
         //[UI("简单")] Simple = 1,
-        [UI("普通")] Normal = 2,
-        [UI("详细")] Detail = 4,
+        [UI("普通")] False = 2,
+        [UI("详细")] True = 4,
         //[UI("全部")] All = Simple | Normal | Detail,
     }
 

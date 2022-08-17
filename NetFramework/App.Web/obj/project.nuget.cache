@@ -1,11 +1,48 @@
 {
   "version": 2,
-  "dgSpecHash": "kX9lahvLmz8JDwvezCqRl6GYF5NCszVcdj9QQR+lGsIzczCe35etyqZAD1oD9a2qSFpcyUGJRio16QvNsc42wA==",
-  "success": true,
+  "dgSpecHash": "A+7D0W3pT0fOFYh1z3KXmhMebVDlwNwQsLJdFlqplrcvs94l0hnFPAOyne7NQ4m8gBwwFNty2F6RpNiz1t3G2g==",
+  "success": false,
   "projectFilePath": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Web\\App.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\CJH\\.nuget\\packages\\zkweb.system.drawing\\4.0.1\\zkweb.system.drawing.4.0.1.nupkg.sha512",
-    "C:\\Users\\CJH\\.nuget\\packages\\app.utils\\1.0.0\\app.utils.1.0.0.nupkg.sha512"
+    "C:\\Users\\CJH\\.nuget\\packages\\app.utils\\3.0.2\\app.utils.3.0.2.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "项目 App.Utils 与 net45 (.NETFramework,Version=v4.5) 不兼容。 项目 App.Utils 支持: netstandard2.0 (.NETStandard,Version=v2.0)",
+      "libraryId": "App.Utils",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.5"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "项目 App.Utils 与 net45 (.NETFramework,Version=v4.5) / win 不兼容。 项目 App.Utils 支持: netstandard2.0 (.NETStandard,Version=v2.0)",
+      "libraryId": "App.Utils",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.5/win"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "项目 App.Utils 与 net45 (.NETFramework,Version=v4.5) / win-x64 不兼容。 项目 App.Utils 支持: netstandard2.0 (.NETStandard,Version=v2.0)",
+      "libraryId": "App.Utils",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.5/win-x64"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "项目 App.Utils 与 net45 (.NETFramework,Version=v4.5) / win-x86 不兼容。 项目 App.Utils 支持: netstandard2.0 (.NETStandard,Version=v2.0)",
+      "libraryId": "App.Utils",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.5/win-x86"
+      ]
+    }
+  ]
 }

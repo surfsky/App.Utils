@@ -56,7 +56,8 @@ namespace App.Utils
         /// <returns>验证码和图片元组对象</returns>
         public static VerifyImage Draw(int w = 80, int h = 40)
         {
-            var fontStencil = FontHelper.GetFont(App.Utils.Properties.Resources.Stencil_ICG, 36, FontStyle.Bold);
+            var r = h / 40.0;
+            var fontStencil = FontHelper.GetFont(App.Utils.Properties.Resources.Stencil_ICG, (int)(36*r), FontStyle.Bold);
             //var fontPledg = FontHelper.GetFont(App.Properties.Resources.PLEDG_KI, 36, FontStyle.Italic);  // 注意样式要匹配，否则会报异常
             //var fontAgent = FontHelper.GetFont(App.Properties.Resources.Agent_Red, 26, FontStyle.Regular);
 
@@ -68,9 +69,9 @@ namespace App.Utils
                 //new VerifyCodeConfig(fontAgent, 18, -2, 0),      // 空心字体
                 //new VerifyCodeConfig(new Font("Disko", 24), 17, -2, 2),           // 空心字体
                 //new VerifyCodeConfig(new Font("Times New Roman", 36), 18, -8, 2),
-                new VerifyCodeConfig(fontStencil, 22, -5, 0),
                 //new VerifyCodeConfig(fontPledg, 20, -2, 0),
                 //new VerifyCodeFont(new Font("Gungsuh", 18), 18, 2, 2),
+                new VerifyCodeConfig(fontStencil, (int)(22*r), (int)(-5*r), 0),
             };
 
             // 生成验证码字符串 
@@ -84,6 +85,7 @@ namespace App.Utils
             var g = Graphics.FromImage(bmp);
             g.Clear(Color.White);
 
+            /*
             // 画噪点 
             for (int i = 0; i < 40; i++)
             {
@@ -95,7 +97,6 @@ namespace App.Utils
             }
 
             // 画噪线 
-            /*
             for (int i = 0; i < 5; i++)
             {
                 int x1 = rnd.Next(w);
@@ -108,47 +109,22 @@ namespace App.Utils
             */
 
             // 画验证码字符串
-            //Font font = new Font("Arial", 36);
-            //Color color = Color.Blue;
-            //DrawChar(g, 'B', 0, 0, font, color);
             var cfg = cfgs[rnd.Next(cfgs.Count)];
             for (int i = 0; i < code.Length; i++)
             {
                 var c = code[i];
                 var x = i * cfg.Width + cfg.HMargin;
                 var y = cfg.VMargin;
-                var angle = new Random().Next(-30, 30);
+                var angle = rnd.Next(-30, 30);
+                if (angle == 0) angle = 15;
                 var font = cfg.Font;
                 var color = colors[rnd.Next(colors.Length)];
-                if (angle == 0) angle = 15;
                 DrawChar(g, c, x, y, font, color, angle);
                 System.Threading.Thread.Sleep(1);
             }
 
             // 扭曲
-            bmp = Painter.Twist(bmp);
-
-            // 反相部分区域（未完成）
-            /*
-            var bmp2 = new Bitmap(w, h);
-            var g2 = Graphics.FromImage(bmp2);
-            //g2.FillRectangle(new SolidBrush(Color.Black), 0, 0, w, h);
-            var polygon1 = new PointF[] {
-                new PointF(0, 0),
-                new PointF((float)(w*2/3.0), 0),
-                new PointF(0, (float)(h*2/3.0))
-            };
-            g2.FillPolygon(new SolidBrush(Color.White), polygon1);
-            var polygon2 = new PointF[] {
-                new PointF((float)(w/3.0), h),
-                new PointF(w, h),
-                new PointF(w, (float)(h/3.0))
-            };
-            g2.FillPolygon(new SolidBrush(Color.White), polygon2);
-            //bmp = DrawHelper.ReverseImage(bmp, bmp2, new Point(0, 0));
-            */
-
-            //
+            //bmp = Painter.Twist(bmp);  // 效果不明显先取消（可能是图片太小了）
             return new VerifyImage(code, bmp);
         }
 
@@ -159,7 +135,7 @@ namespace App.Utils
             var pen = new Pen(color, 1);
             var brush = new SolidBrush(color);
 
-            //g.DrawString(c.ToString(), font, brush, x, y);
+            // 字符区域；下半部填充区域（模拟腾讯验证码，一半边框，一半填充，用传统的解析方法是很难解析该字符的）
             var path = GetTextPath(g, c.ToString(), font);
             var region = new Region(path);
             var rect = region.GetBounds(g);
@@ -168,12 +144,12 @@ namespace App.Utils
             region.Intersect(rectHalf);
 
             // 绘制字符图片(描边、填充一半底部)
-            var bitmap = new Bitmap((int)rectFull.Width, (int)rectFull.Height);
+            var bitmap = new Bitmap((int)rectFull.Width+2, (int)rectFull.Height+2);
             var g2 = Graphics.FromImage(bitmap);
-            g.SmoothingMode = SmoothingMode.AntiAlias;
-            g.InterpolationMode = InterpolationMode.HighQualityBicubic;
-            g.CompositingQuality = CompositingQuality.HighQuality;
-            g.TextRenderingHint = TextRenderingHint.AntiAlias;
+            g2.SmoothingMode = SmoothingMode.AntiAlias;
+            g2.InterpolationMode = InterpolationMode.HighQualityBicubic;
+            g2.CompositingQuality = CompositingQuality.HighQuality;
+            g2.TextRenderingHint = TextRenderingHint.AntiAlias;
             g2.DrawPath(pen, path);           // 描边
             g2.FillRegion(brush, region);     // 填充一半底部
 

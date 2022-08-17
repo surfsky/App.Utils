@@ -310,8 +310,13 @@
 
 
 2.2.1
-
 * ParseQueryDict -> ParseDict
 + double.ToDistanceText
 + GetOriginalException
 + SearcherAttribute -> SearchAttribute
++ EncrptHelper.AesEncrypt, AesDecrypt
+
+
+3.0.1
++ Smoothlize VerifyImage
++ BitmapOperator.cs

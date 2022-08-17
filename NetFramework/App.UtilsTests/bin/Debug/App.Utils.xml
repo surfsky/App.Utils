@@ -167,6 +167,9 @@
         <member name="M:App.Utils.UISetting`1.SetColumnImage(System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.String)">
             <summary>添加图像成员</summary>
         </member>
+        <member name="M:App.Utils.UISetting`1.SetColumnEnum(System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.String)">
+            <summary>添加枚举成员</summary>
+        </member>
         <member name="M:App.Utils.UISetting`1.SetEditor(System.Linq.Expressions.Expression{System.Func{`0,System.Object}},App.Utils.EditorType,System.Object)">
             <summary>设置表单成员</summary>
         </member>
@@ -213,6 +216,9 @@
             <param name="valueType">值类型。如 DAL.Res</param>
             <param name="textField">值类型中的文本域名称。如 Name</param>
             <param name="query">查询参数.如resKey={0}</param>
+        </member>
+        <member name="M:App.Utils.UISetting`1.SetEditorEnum(System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Type)">
+            <summary>添加枚举成员</summary>
         </member>
         <member name="M:App.Utils.UISetting`1.SetEditorWinList(System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Type,System.String)">
             <summary>添加列表成员</summary>
@@ -1040,7 +1046,7 @@
         </member>
         <member name="M:App.Utils.EncryptHelper.DesEncrypt(System.String,System.String,System.Text.Encoding)">
             -------------------------------------------------------------------------
-             使用 DES 算法加密解密（对称算法）
+             使用 DES (Data Encryption Standard)算法加密解密（对称算法）
             -------------------------------------------------------------------------
              <summary>
              用 DES 算法加密字符串。
@@ -1048,7 +1054,7 @@
              速度快，特别适用于对较大的数据流执行加密转换
              </summary>
              <param name="text">要加密的文本</param>
-             <param name="key">8或16字节密钥，如"12345678"</param>
+             <param name="key">8或16字节密钥（4或8个字符），如"12345678"</param>
              <returns>加密后的文本</returns>
         </member>
         <member name="M:App.Utils.EncryptHelper.DesDecrypt(System.String,System.String,System.Text.Encoding)">
@@ -1057,16 +1063,40 @@
             <param name="key">密钥：8或16字节</param>
             <returns>解密后的文本</returns>
         </member>
+        <member name="M:App.Utils.EncryptHelper.AesEncrypt(System.String,System.String,System.String)">
+            -------------------------------------------------------------------------
+             使用 AES (Advanced Encryption Standard) 算法加解密（对称算法）
+             参考：https://blog.csdn.net/weixin_30753873/article/details/98694084
+             简单说来：AES 比 DES 拥有更好的安全性和性能
+            -------------------------------------------------------------------------
+             <summary>AES 加密</summary>
+             <param name="text">需要加密的字符串</param>
+             <param name="key">32位密钥（16个字符），如 1234567890123456</param>
+             <param name="iv">加密向量，如 abcdefghijklmnop</param>
+             <returns>加密后的字符串</returns>
+        </member>
+        <member name="M:App.Utils.EncryptHelper.AesDecrypt(System.String,System.String,System.String)">
+            <summary>AES 解密</summary>
+            <param name="text">需要解密的字符串</param>
+            <param name="key">32位密钥（16个字符），如 1234567890123456</param>
+            <param name="iv">加密向量，如 abcdefghijklmnop</param>
+            <returns>解密后的字符串</returns>
+        </member>
         <member name="M:App.Utils.EncryptHelper.RSACreateKeyPair">
             -------------------------------------------------------------------------
              RSA 非对称加密
-            -------------------------------------------------------------------------
-             <summary>
-             用RSA加密字符串，产生加密文本和密钥
+             
+             非对称密钥拥有很长的密钥，具有较好的安全性。但性能不好。
+             一般我们结合使用 RSA 和 DES：先用 RSA 协商 DES 密钥，再用DES 进行加密传输
+             这就是 Https 的基本原理
+             
              RSA算法的理论根据来自于一个大素数所具有的特性。对于给定的两个大素数A与B，很容易计算出它们的乘积。
              但是，仅知道AB的乘积却很难计算原来的A与B各自的值。
              在不深入到RSA算法细节的情况下，可以简单得认为(A，B)这对数定义了非对称算法中的私钥，而AB的乘积则定义了算法中的公钥。
              以Base64String方式保存，公钥324个字符，私钥1220字符。
+            -------------------------------------------------------------------------
+             <summary>
+             用RSA加密字符串，产生加密文本和密钥
              </summary>
              <example>
                 string msg = "hello world";
@@ -1855,26 +1885,6 @@
             <param name="timeStamp">Unix时间戳格式</param>
             <returns>C#格式时间</returns>
         </member>
-        <member name="T:App.Utils.DESEncrypt">
-            <summary>
-            DES加密/解密类（EncryptHelper已经实现，本类将废除）
-            </summary>
-        </member>
-        <member name="F:App.Utils.DESEncrypt._vector">
-            <summary>默认加密向量</summary>  
-        </member>
-        <member name="M:App.Utils.DESEncrypt.EncryptDES(System.String,System.String)">
-            <summary>DES加密字符串</summary>  
-            <param name="text">待加密的字符串</param>  
-            <param name="key">加密密钥,要求为8位</param>  
-            <returns>加密成功返回加密后的字符串，失败返回空字符串</returns>  
-        </member>
-        <member name="M:App.Utils.DESEncrypt.DecryptDES(System.String,System.String)">
-            <summary>DES解密字符串</summary>  
-            <param name="text">待解密的字符串</param>  
-            <param name="key">解密密钥,要求为8位,和加密密钥相同</param>  
-            <returns>解密成功返回解密后的字符串，失败返空字符串</returns>  
-        </member>
         <member name="T:App.Utils.Painter">
             <summary>
             绘图相关辅助方法
@@ -2433,7 +2443,7 @@
             <summary>转化为逗号分隔的字符串</summary>
         </member>
         <member name="M:App.Utils.StringHelper.Split``1(System.String)">
-            <summary>拆分字符串并转化为对象列表（可处理 , ; tab space）</summary>
+            <summary>拆分字符串并转化为对象列表（可处理 , ; | tab space）</summary>
         </member>
         <member name="M:App.Utils.StringHelper.SplitString(System.String)">
             <summary>拆分字符串并转化为字符串列表（可处理 , ; tab space）</summary>
@@ -2467,6 +2477,7 @@
         <member name="M:App.Utils.StringHelper.SubText(System.String,System.Int32,System.Int32)">
             <summary>安全裁剪字符串（可替代SubString()方法）</summary>
             <param name="startIndex">开始字符位置。base-0</param>
+            <param name="length">需要裁剪的长度。若为 -1 则裁剪到文本末尾</param>
         </member>
         <member name="M:App.Utils.StringHelper.Mask(System.String,System.Int32,System.String)">
             <summary>获取遮罩文本（XXXXXXXXXX****XXXX）</summary>

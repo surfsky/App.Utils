@@ -29,3 +29,6 @@
 \\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.UtilsTests\bin\Debug\ZKWeb.System.Drawing.dll
 \\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.UtilsTests\bin\Debug\App.Web.dll
 \\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.UtilsTests\bin\Debug\App.Web.pdb
+\\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.UtilsTests\bin\Debug\App.Entities.xml
+\\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.UtilsTests\bin\Debug\App.Web.xml
+\\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.UtilsTests\obj\Debug\App.UtilsTests.csproj.AssemblyReference.cache

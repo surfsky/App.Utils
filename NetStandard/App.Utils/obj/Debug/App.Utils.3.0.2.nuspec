@@ -4,8 +4,6 @@
     <id>App.Utils</id>
     <version>3.0.2</version>
     <authors>surfsky</authors>
-    <owners>surfsky</owners>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectUrl>https://github.com/surfsky/App.Utils</projectUrl>
     <description>AppPlat utility library (ui-independent, platform-independent)
 This library supports many useful convinient extensions and methods, such as:
@@ -40,6 +38,6 @@ This library supports many useful convinient extensions and methods, such as:
     </dependencies>
   </metadata>
   <files>
-    <file src="/Users/CJH/Downloads/Dev/AppPlat/App.Utils/App.Utils-github/NetStandard/App.Utils/bin/Debug/netstandard2.0/App.Utils.dll" target="lib/netstandard2.0/App.Utils.dll" />
+    <file src="\\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetStandard\App.Utils\bin\Debug\netstandard2.0\App.Utils.dll" target="lib\netstandard2.0\App.Utils.dll" />
   </files>
 </package>

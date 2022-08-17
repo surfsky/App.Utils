@@ -174,7 +174,8 @@ namespace App.Utils
         {
             return this.Items.FirstOrDefault(t => t.Name == field.GetName());
         }
-        public UIAttribute GetOrCreate(Expression<Func<T, object>> field)
+        /// <summary>获取或创建成员</summary>
+        public UIAttribute Take(Expression<Func<T, object>> field)
         {
             var attr = Get(field);
             if (attr == null)
@@ -203,7 +204,7 @@ namespace App.Utils
         /// <summary>设置显示模式（何种页面模式下才显示）</summary>
         public UIAttribute SetMode(Expression<Func<T, object>> field, PageMode mode)
         {
-            return GetOrCreate(field).SetMode(mode);
+            return Take(field).SetMode(mode);
         }
 
 
@@ -213,7 +214,7 @@ namespace App.Utils
         /// <summary>设置列成员</summary>
         public UIAttribute SetColumn(Expression<Func<T, object>> field, int? width = null, ColumnType column = ColumnType.Auto, string title = "", bool? sort = null, object tag = null)
         {
-            return GetOrCreate(field).SetColumn(column, width, title, sort, tag);
+            return Take(field).SetColumn(column, width, title, sort, tag);
         }
 
         /// <summary>添加弹出窗口成员（窗口自定义 UrlTemplate）</summary>
@@ -259,7 +260,7 @@ namespace App.Utils
         /// <summary>设置树列成员</summary>
         public UIAttribute SetColumnTree(Expression<Func<T, object>> field, Expression<Func<T, object>> idField, int? width = null, string title="")
         {
-            var ui = GetOrCreate(field).SetColumn(ColumnType.Auto, width, title: title);
+            var ui = Take(field).SetColumn(ColumnType.Auto, width, title: title);
             ui.Tree = true;
             ui.ValueField = idField.GetName();
             return ui;
@@ -269,16 +270,22 @@ namespace App.Utils
         /// <summary>添加图标成员（只读图像）</summary>
         public UIAttribute SetColumnIcon(Expression<Func<T, object>> field, string title="")
         {
-            return GetOrCreate(field).SetColumn(ColumnType.Icon, title: title);
+            return Take(field).SetColumn(ColumnType.Icon, title: title);
         }
 
 
         /// <summary>添加图像成员</summary>
         public UIAttribute SetColumnImage(Expression<Func<T, object>> field, string title="")
         {
-            return GetOrCreate(field).SetColumn(ColumnType.Image, title: title);
+            return Take(field).SetColumn(ColumnType.Image, title: title);
         }
 
+
+        /// <summary>添加枚举成员</summary>
+        public UIAttribute SetColumnEnum(Expression<Func<T, object>> field, string title = "")
+        {
+            return Take(field).SetColumn(ColumnType.Enum, title: title);
+        }
 
         //---------------------------------------------------
         // 设置编辑器
@@ -286,14 +293,14 @@ namespace App.Utils
         /// <summary>设置表单成员</summary>
         public UIAttribute SetEditor(Expression<Func<T, object>> field, EditorType editor = EditorType.Auto, object tag = null)
         {
-            return GetOrCreate(field).SetEditor(editor, tag);
+            return Take(field).SetEditor(editor, tag);
         }
 
 
         /// <summary>添加图像成员</summary>
         public UIAttribute SetEditorImage(Expression<Func<T, object>> field, Size? size=null)
         {
-            return GetOrCreate(field).SetEditor(EditorType.Image, size);
+            return Take(field).SetEditor(EditorType.Image, size);
         }
 
         /// <summary>添加网格成员（网格自动生成）</summary>
@@ -390,6 +397,13 @@ namespace App.Utils
             return attr;
         }
 
+        /// <summary>添加枚举成员</summary>
+        public UIAttribute SetEditorEnum(Expression<Func<T, object>> field, Type enumType)
+        {
+            var attr = SetEditor(field, EditorType.Enum);
+            attr.Type = enumType;
+            return attr;
+        }
 
         /// <summary>添加列表成员</summary>
         public UIAttribute SetEditorWinList(Expression<Func<T, object>> field, Type valueType, string textField)

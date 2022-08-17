@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "eXYr4qpPhG5utwBJJ3pcn0AJmPMa16KhBfbH7hACHMIUfdy4eIsGbYIFvVyCGPZIaxDyKb4vuuw0DmCZRWnVpQ==",
+  "dgSpecHash": "i+yGC+a1eqwFbKWUJUaX+INzewpdngPXQ6sWGuzwSjbim3i7njHpmmEHuJf7Ebe9t73wZMzVxcqN1M1qQHNn/Q==",
   "success": true,
   "projectFilePath": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetStandard\\App.Entities\\App.Entities.csproj",
   "expectedPackageFiles": [
@@ -63,8 +63,8 @@
     "C:\\Users\\CJH\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\CJH\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
     "C:\\Users\\CJH\\.nuget\\packages\\system.collections.immutable\\1.5.0\\system.collections.immutable.1.5.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.collections.nongeneric\\4.3.0\\system.collections.nongeneric.4.3.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.collections.specialized\\4.3.0\\system.collections.specialized.4.3.0.nupkg.sha512",
+    "C:\\Users\\CJH\\.nuget\\packages\\system.collections.nongeneric\\4.3.0\\system.collections.nongeneric.4.3.0.nupkg.sha512",
+    "C:\\Users\\CJH\\.nuget\\packages\\system.collections.specialized\\4.3.0\\system.collections.specialized.4.3.0.nupkg.sha512",
     "C:\\Users\\CJH\\.nuget\\packages\\system.componentmodel\\4.3.0\\system.componentmodel.4.3.0.nupkg.sha512",
     "C:\\Users\\CJH\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
     "C:\\Users\\CJH\\.nuget\\packages\\system.componentmodel.primitives\\4.3.0\\system.componentmodel.primitives.4.3.0.nupkg.sha512",

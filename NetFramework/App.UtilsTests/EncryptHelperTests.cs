@@ -18,6 +18,17 @@ namespace App.Utils.Tests
             var msg = "Hello world";
             var encrypt = msg.DesEncrypt(key);
             var decrypt = encrypt.DesDecrypt(key);
+            Assert.AreEqual(decrypt, msg);
+        }
+
+        [TestMethod()]
+        public void AesEncryptTest()
+        {
+            var key = "1234567890123456";
+            var msg = "Hello world";
+            var encrypt = msg.AesEncrypt(key);
+            var decrypt = encrypt.AesDecrypt(key);
+            Assert.AreEqual(decrypt, msg);
         }
 
         [TestMethod()]

@@ -4,74 +4,6 @@
     "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.UtilsTests\\App.UtilsTests.csproj": {}
   },
   "projects": {
-    "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Entities\\App.Entities.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Entities\\App.Entities.csproj",
-        "projectName": "App.Entities",
-        "projectPath": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Entities\\App.Entities.csproj",
-        "packagesPath": "C:\\Users\\CJH\\.nuget\\packages\\",
-        "outputPath": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Entities\\obj\\",
-        "projectStyle": "PackageReference",
-        "skipContentFileWrite": true,
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\CJH\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net45"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net45": {
-            "projectReferences": {
-              "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Utils\\App.Utils.csproj": {
-                "projectPath": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Utils\\App.Utils.csproj"
-              },
-              "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Web\\App.Web.csproj": {
-                "projectPath": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Web\\App.Web.csproj"
-              }
-            }
-          }
-        }
-      },
-      "frameworks": {
-        "net45": {
-          "dependencies": {
-            "EntityFramework": {
-              "target": "Package",
-              "version": "[6.2.0, )"
-            },
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[11.0.2, )"
-            },
-            "Z.EntityFramework.Plus.EF6": {
-              "target": "Package",
-              "version": "[1.12.19, )"
-            }
-          }
-        }
-      },
-      "runtimes": {
-        "win": {
-          "#import": []
-        },
-        "win-x64": {
-          "#import": []
-        },
-        "win-x86": {
-          "#import": []
-        }
-      }
-    },
     "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.UtilsTests\\App.UtilsTests.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -83,10 +15,12 @@
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\CJH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -100,9 +34,6 @@
         "frameworks": {
           "net45": {
             "projectReferences": {
-              "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Entities\\App.Entities.csproj": {
-                "projectPath": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Entities\\App.Entities.csproj"
-              },
               "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Utils\\App.Utils.csproj": {
                 "projectPath": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Utils\\App.Utils.csproj"
               }
@@ -140,67 +71,15 @@
       "restore": {
         "projectUniqueName": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Utils\\App.Utils.csproj",
         "projectName": "App.Utils",
-        "projectPath": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Utils\\App.Utils.csproj"
+        "projectPath": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Utils\\App.Utils.csproj",
+        "frameworks": {
+          "net45": {
+            "projectReferences": {}
+          }
+        }
       },
       "frameworks": {
         "net45": {}
-      }
-    },
-    "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Web\\App.Web.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Web\\App.Web.csproj",
-        "projectName": "App.Web",
-        "projectPath": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Web\\App.Web.csproj",
-        "packagesPath": "C:\\Users\\CJH\\.nuget\\packages\\",
-        "outputPath": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Web\\obj\\",
-        "projectStyle": "PackageReference",
-        "skipContentFileWrite": true,
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\CJH\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net45"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net45": {
-            "projectReferences": {
-              "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Utils\\App.Utils.csproj": {
-                "projectPath": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Utils\\App.Utils.csproj"
-              }
-            }
-          }
-        }
-      },
-      "frameworks": {
-        "net45": {
-          "dependencies": {
-            "ZKWeb.System.Drawing": {
-              "target": "Package",
-              "version": "[4.0.1, )"
-            }
-          }
-        }
-      },
-      "runtimes": {
-        "win": {
-          "#import": []
-        },
-        "win-x64": {
-          "#import": []
-        },
-        "win-x86": {
-          "#import": []
-        }
       }
     }
   }

@@ -1,0 +1,408 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>App.Entities</name>
+    </assembly>
+    <members>
+        <member name="T:App.Entities.EntityConfig">
+            <summary>
+            App.Core 类库配置信息
+            </summary>
+        </member>
+        <member name="E:App.Entities.EntityConfig.OnGetDb">
+            <summary>获取数据库上下文事件</summary>
+        </member>
+        <member name="P:App.Entities.EntityConfig.Db">
+            <summary>数据库上下文（需配置 OnGetDb事件）</summary>
+        </member>
+        <member name="T:App.Entities.EntityLogger">
+            <summary>
+            自定义的 EntityFramework 数据库操作日志记录器
+            DbInterception.Add(new EntityLogger());
+            </summary>
+        </member>
+        <member name="T:App.Entities.EntityOp">
+            <summary>
+            实体操作方式
+            </summary>
+        </member>
+        <member name="T:App.Entities.SnowflakeIDAttribute">
+            <summary>
+            使用 SnowflakeID 算法创建ID
+            </summary>
+        </member>
+        <member name="T:App.Entities.EntityBase">
+            <summary>
+            数据实体基类，定义了
+            (1) 公共属性（如id的生成、历史附表、资源附表等）。
+            (2) 导出逻辑
+            数据操作请用泛型类 EntityBase&lt;T&gt;
+            </summary>
+        </member>
+        <member name="P:App.Entities.EntityBase.ID">
+            <summary>ID字段。如要自定义数据库字段名，请重载并加上[Column("XXXID")]</summary>
+            <remarks>此处用virtual标注，不会在本表中生成数据库字段，而在子类表中生成字段</remarks>
+        </member>
+        <member name="M:App.Entities.EntityBase.BeforeSave(App.Entities.EntityOp)">
+            <summary>保存前处理（如设置某些计算字段）</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase.AfterChange(App.Entities.EntityOp)">
+            <summary>数据 CURD 更改后处理（如统计、刷新缓存）</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase.OnDeleteReference(System.Int64)">
+            <summary>删除相关数据（如相关表，级联数据）</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase.Delete(System.Boolean)">
+            <summary>删除</summary>
+        </member>
+        <member name="P:App.Entities.EntityBase.Db">
+            <summary>数据上下文</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase.SetModified">
+            <summary>设置状态为已修改</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase.Export(System.Int32)">
+            <summary>获取导出对象（可用于接口数据输出）</summary>
+            <param name="type">导出详细信息还是概述信息</param>
+            
+            <example>
+            var item = User.Get(..).Export();
+            var items = User.Search(....).ToList().Cast(t => t.Export());
+            </example>
+            
+            <remarks>
+            - 统一用 IExport 接口，以功能换性能。
+            - 不采用 Expression 的原因：有些复杂导出属性要用方法生成，无法被EF解析。
+            - 对于字段实在太多的类，如有有性能问题，可先 Select 后自己写 Export 逻辑。
+            
+            关于导出数据有三态
+            - 导出数据有三态：Detail 包含 Normal， Normal 包含 Simple。但大部分只用到了2态。
+            - 此项目仅 User 用到了三态（可考虑为 User单独写 ExportSimple() 方法）
+            - 在找到其它解决方法之前，先保持此结构
+            
+            考虑自动拼装属性，逻辑如：
+            - 子类根据 ExportType 分别导出各自属性（不重叠），如用3个方法实现
+            - 基类的方法自动组装这些字段（Detail包含Normal, Normal包含Simple）
+            - 可用字典，或用动态类实现该逻辑
+            - 算了，太精巧了不容易维护，还是要求每个实体类都手工写 Export 方法
+            
+            </remarks>
+        </member>
+        <member name="M:App.Entities.EntityBase.ExportJson(System.Int32)">
+            <summary>导出json</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase.GridUI">
+            <summary>网格设置信息</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase.FormUI">
+            <summary>表单设置i信息</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase.GetSearchMethod(System.Type)">
+            <summary>找到实体检索方法（具有[SearcherAttribute]，若没有则尝试找名称为"Search"的方法）</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase.AddHistory(System.Nullable{System.Int64},System.String,System.String,System.String,System.Nullable{System.Int32},System.String,System.Collections.Generic.List{System.String})">
+            <summary>增加操作历史</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase.DeleteHistories">
+            <summary>删除附属历史</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase.DeleteRes">
+            <summary>删除附属资源</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase.DeleteRes(System.Type,System.Int64)">
+            <summary>删除附属资源</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase.AddRes(System.Collections.Generic.List{System.String})">
+            <summary>添加资源</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase.Init">
+            <summary>批量初始化数据（请用 new T().Init()方式调用）</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase.FixBatch">
+            <summary>批量修正数据（请用 new T().Fix()方式调用）</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase.Fix">
+            <summary>修正单条数据</summary>
+        </member>
+        <member name="T:App.Entities.EntityBase`1">
+            <summary>
+            数据操作基类。实现了数据访问的一些基础CRUD操作。
+            请用子类继承之，并实现扩展逻辑，如Search(), GetDetail()
+            详见 Doc 相关文档
+            </summary>
+            <example>
+            public class User : EntityBase&lt;User&gt;
+            
+            // New and save
+            var u = new User();
+            u.Name = "Kevin";
+            u.Save();
+            
+            // Get and modify
+            var user = User.Get(5);
+            var user = User.Get(t => t.UserID == 5);
+            user.Age = 20;
+            user.Save();
+            
+            // Search and Bind
+            var users = User.Search(t => t.Name.Contains("Kevin")).ToList();
+            var data = users.SortAndPage(t => t.Name, true, 0, 50);
+            DataGrid1.DataSource = data;
+            DataGrid1.DataBind();
+            
+            // transaction
+            using (var transaction = AppContext.Current.Database.BeginTransaction())
+            {
+                try
+                {
+                    var orderItem = new OrderItem(....);
+                    var order = new Order(....);
+                    orderItem.Save();
+                    order.Save();
+                    transaction.Commit();
+                }
+                catch
+                {
+                    transaction.Rollback();
+                }
+            }
+            </example>
+        </member>
+        <member name="P:App.Entities.EntityBase`1.Set">
+            <summary>数据集</summary>
+        </member>
+        <member name="P:App.Entities.EntityBase`1.ValidSet">
+            <summary>有效数据集（若为逻辑删除，返回 Set.Where(t => t.InUsed != false)）</summary>
+        </member>
+        <member name="P:App.Entities.EntityBase`1.IncludeSet">
+            <summary>已引用关联表的数据集（注意，不包含集合类的数据类型）</summary>
+        </member>
+        <member name="P:App.Entities.EntityBase`1.SnowflakeAttribute">
+            <summary>ID 生成方式</summary>
+        </member>
+        <member name="P:App.Entities.EntityBase`1.Instance">
+            <summary>单例</summary>
+        </member>
+        <member name="P:App.Entities.EntityBase`1.All">
+            <summary>所有数据的缓存</summary>
+        </member>
+        <member name="P:App.Entities.EntityBase`1.CacheAllName">
+            <summary>所有数据缓存名称</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase`1.ClearCache">
+            <summary>清除该实体的全部数据缓存</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase`1.LoadCache">
+            <summary>加载该实体的全部数据缓存</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase`1.AfterChange(App.Entities.EntityOp)">
+            <summary>保存后刷新缓存</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase`1.Save(System.Boolean)">
+            <summary>保存修改</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase`1.Get(System.Nullable{System.Int64},System.Boolean)">
+            <summary>获取（根据ID）</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase`1.Get(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>找到首个实体</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase`1.GetDetail(System.Int64)">
+            <summary>获取详情（包括关联表信息）。注意重载该方法的话，参数只能有一个id，否则自动化表单会出错</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase`1.Search(System.Collections.Generic.List{System.Int64})">
+            <summary>查找指定ID的数据列表</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase`1.Search(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>查找</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase`1.Clear(System.Boolean)">
+            <summary>清空数据</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase`1.Delete(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Boolean)">
+            <summary>批量物理删除</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase`1.Delete(System.Int64,System.Boolean)">
+            <summary>删除（如要删除对应的附属资源，请填写类型名参数）</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase`1.Delete(System.Boolean)">
+            <summary>删除。若类实现了 IDeleteLogic 接口则采用逻辑删除；否则实现物理删除，将删除资源、历史、关联表数据；</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase`1.OnDeleteReference(System.Int64)">
+            <summary>删除相关数据</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase`1.StatDayNew(System.DateTime,System.Nullable{System.DateTime},System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>日增统计</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase`1.StatDayAmount(System.DateTime,System.Nullable{System.DateTime},System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>日存量统计</summary>
+        </member>
+        <member name="M:App.Entities.EntityBase`1.ToAmountData(System.Collections.Generic.List{App.Entities.StatItem},System.Int32)">
+            <summary>将日数据转化为累计数据</summary>
+        </member>
+        <member name="T:App.Entities.EntityHelper">
+            <summary>
+            静态辅助方法
+            </summary>
+        </member>
+        <member name="M:App.Entities.EntityHelper.GetEntityType(System.Type)">
+            <summary>获取实体的真实类型（而不是临时的代理类型）</summary>
+        </member>
+        <member name="M:App.Entities.EntityHelper.BuildTree``1(System.Collections.Generic.List{``0},System.Nullable{System.Int64})">
+            <summary>获取树结构列表</summary>
+        </member>
+        <member name="M:App.Entities.EntityHelper.DoBuildTree``1(System.Collections.Generic.List{``0},System.Nullable{System.Int64},System.Int32,System.Collections.Generic.List{``0}@)">
+            <summary>构建树结构</summary>
+        </member>
+        <member name="M:App.Entities.EntityHelper.CloneTree``1(System.Collections.Generic.List{``0})">
+            <summary>拷贝树结构列表（并构造父子结构）</summary>
+        </member>
+        <member name="M:App.Entities.EntityHelper.GetDescendants``1(System.Collections.Generic.List{``0},System.Nullable{System.Int64})">
+            <summary>递归获取子节点（包含自身）</summary>
+            <param name="all">所有元素</param>
+            <param name="rootId">根元素ID</param>
+            <returns>根元素及其子孙节点列表</returns>
+        </member>
+        <member name="M:App.Entities.EntityHelper.GetDescendants``1(System.Collections.Generic.List{``0},System.Collections.Generic.List{System.Int64})">
+            <summary>递归获取子节点（包含自身）</summary>
+        </member>
+        <member name="T:App.Entities.History">
+            <summary>处理历史</summary>
+        </member>
+        <member name="M:App.Entities.History.Search(System.String,System.String,System.String,System.Nullable{System.DateTime})">
+            <summary>查找历史记录</summary>
+        </member>
+        <member name="M:App.Entities.History.AddHistory(System.String,System.Nullable{System.Int64},System.String,System.Nullable{System.Int32},System.String,System.String,System.String,System.Collections.Generic.List{System.String})">
+            <summary>增加历史记录</summary>
+        </member>
+        <member name="M:App.Entities.History.DeleteBatch(System.String)">
+            <summary>批量删除</summary>
+        </member>
+        <member name="M:App.Entities.History.AssignNextUser(System.Nullable{System.Int64},System.String,System.String,System.Nullable{System.DateTime})">
+            <summary>指派后继处理人</summary>
+        </member>
+        <member name="T:App.Entities.ILogChange">
+            <summary>记录数据操作日期</summary>
+        </member>
+        <member name="T:App.Entities.IExport">
+            <summary>导出数据接口</summary>
+        </member>
+        <member name="T:App.Entities.ICollsionDetect">
+            <summary>是否检测并发冲突</summary>
+        </member>
+        <member name="P:App.Entities.ICollsionDetect.CollisionId">
+            <summary>并发冲突ID。保存时如果与库中不一致则抛出异常</summary>
+        </member>
+        <member name="T:App.Entities.IDeleteLogic">
+            <summary>逻辑删除接口</summary>
+        </member>
+        <member name="T:App.Entities.IFix">
+            <summary>修正数据接口</summary>
+        </member>
+        <member name="M:App.Entities.IFix.Fix">
+            <summary>修正实体自身数据</summary>
+        </member>
+        <member name="M:App.Entities.IFix.FixBatch">
+            <summary>批量修正数据</summary>
+            <remarks>由于 C# 接口无法定义静态方法，只能用这种方法折衷实现。调用方法如：new XXX().FixBatch(); </remarks>
+        </member>
+        <member name="T:App.Entities.IInit">
+            <summary>初始化数据接口</summary>
+        </member>
+        <member name="M:App.Entities.IInit.Init">
+            <summary>批量初始化数据</summary>
+            <remarks>由于 C# 接口无法定义静态方法，只能用这种方法折衷实现。调用方法如：new XXX().Init(); </remarks>
+        </member>
+        <member name="T:App.Entities.ITree">
+            <summary>树接口</summary>
+        </member>
+        <member name="P:App.Entities.ITree.ParentID">
+            <summary>父ID</summary>
+        </member>
+        <member name="P:App.Entities.ITree.Name">
+            <summary>名称</summary>
+        </member>
+        <member name="P:App.Entities.ITree.TreeLevel">
+            <summary>菜单在树形结构中的层级（从0开始）</summary>
+        </member>
+        <member name="P:App.Entities.ITree.Enabled">
+            <summary>是否可用（默认true）</summary>
+        </member>
+        <member name="P:App.Entities.ITree.IsTreeLeaf">
+            <summary>是否叶子节点（默认true）</summary>
+        </member>
+        <member name="P:App.Entities.ITree`1.Parent">
+            <summary>父节点</summary>
+        </member>
+        <member name="P:App.Entities.ITree`1.Children">
+            <summary>子节点列表</summary>
+        </member>
+        <member name="T:App.Entities.ICacheAll">
+            <summary>
+            本类使用缓存数据。 
+            标注了本接口的类：
+            （1）可用 All 属性获取所有缓存数据；
+            （2）任何对数据的变更都将触发缓存变更 (EntityBase.AfterChange)；
+            （3）自动化 XUI 窗体将不直接从数据库获取数据，而是从缓存中获取数据；
+            （4）这是一个标注接口，无任何成员；
+            </summary>
+        </member>
+        <member name="T:App.Entities.ResType">
+            <summary>
+            资源类型
+            </summary>
+        </member>
+        <member name="T:App.Entities.Res">
+            <summary>
+            资源表（可记录文件、文本等信息）
+            </summary>
+        </member>
+        <member name="M:App.Entities.Res.Export(System.Int32)">
+            <summary>导出</summary>
+        </member>
+        <member name="M:App.Entities.Res.HandleFileRes(System.String)">
+            <summary>处理文件资源</summary>
+        </member>
+        <member name="T:App.Entities.StatItem">
+            <summary>
+            统计数据项（统计及报表用到）。格式如 {Name:"商品1", Step:"201901", Value:13}
+            </summary>
+        </member>
+        <member name="M:App.Entities.StatItem.#ctor(System.String,System.String,System.Double)">
+            <summary>统计数据项</summary>
+            <param name="name">名称.如“商品1”</param>
+            <param name="step">步骤名称。如“201902”</param>
+            <param name="value">值。如“23”</param>
+        </member>
+        <member name="T:App.Entities.XState">
+            <summary>
+            系统配置表。
+            系统所有的状态信息、枚举信息都可在本表维护。可供用户在后台查看。
+            </summary>
+        </member>
+        <member name="M:App.Entities.XState.GetValue(System.String,System.String)">
+            <summary>获取配置值</summary>
+        </member>
+        <member name="M:App.Entities.XState.SetValue(System.String,System.String,System.Object)">
+            <summary>设置配置值</summary>
+        </member>
+        <member name="T:App.Entities.XUIType">
+            <summary>UI 类型</summary>
+        </member>
+        <member name="P:App.Entities.XUI.All">
+            <summary>所有（有缓存）</summary>
+        </member>
+        <member name="M:App.Entities.XUI.AfterChange(App.Entities.EntityOp)">
+            <summary>任何数据变更都尝试解析配置</summary>
+        </member>
+        <member name="M:App.Entities.XUI.Parse">
+            <summary>解析配置</summary>
+        </member>
+        <member name="M:App.Entities.XUI.Search(System.Nullable{App.Entities.XUIType},System.String)">
+            <summary>查询</summary>
+        </member>
+        <member name="M:App.Entities.XUI.GetSetting(App.Entities.XUIType,System.Type)">
+            <summary>获取实体类配置信息</summary>
+        </member>
+    </members>
+</doc>

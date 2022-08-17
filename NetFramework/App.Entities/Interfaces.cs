@@ -17,7 +17,7 @@ namespace App.Entities
     /// <summary>导出数据接口</summary>
     public interface IExport
     {
-        object Export(ExportMode type);
+        object Export(int level);
     }
 
 
@@ -41,11 +41,11 @@ namespace App.Entities
     public interface IFix
     {
         /// <summary>修正实体自身数据</summary>
-        object FixItem();
+        object Fix();
 
         /// <summary>批量修正数据</summary>
         /// <remarks>由于 C# 接口无法定义静态方法，只能用这种方法折衷实现。调用方法如：new XXX().FixBatch(); </remarks>
-        int Fix();
+        int FixBatch();
     }
 
     /// <summary>初始化数据接口</summary>

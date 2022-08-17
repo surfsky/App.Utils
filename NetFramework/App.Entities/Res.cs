@@ -71,7 +71,7 @@ namespace App.Entities
         // 公共方法
         //-----------------------------------------------
         /// <summary>导出</summary>
-        public override object Export(ExportMode type = ExportMode.Normal)
+        public override object Export(int level = 0)
         {
             return new
             {
@@ -79,14 +79,14 @@ namespace App.Entities
                 this.Url,
                 this.FileSizeText,
 
-                ID            = type.HasFlag(ExportMode.Detail) ? (long?)this.ID : null,
-                Type          = type.HasFlag(ExportMode.Detail) ? this.Type : null,
-                MimeType      = type.HasFlag(ExportMode.Detail) ? this.MimeType : null,
-                FileSize      = type.HasFlag(ExportMode.Detail) ? this.FileSize : null,
-                CreateDt      = type.HasFlag(ExportMode.Detail) ? this.CreateDt : null,
-                FileExtension = type.HasFlag(ExportMode.Detail) ? this.FileExtension : null,
-                FileMD5       = type.HasFlag(ExportMode.Detail) ? this.FileMD5 : null,
-                FileVisitCnt  = type.HasFlag(ExportMode.Detail) ? this.FileVisitCnt : null,
+                ID            = level>0 ? (long?)this.ID : null,
+                Type          = level>0 ? this.Type : null,
+                MimeType      = level>0 ? this.MimeType : null,
+                FileSize      = level>0 ? this.FileSize : null,
+                CreateDt      = level>0 ? this.CreateDt : null,
+                FileExtension = level>0 ? this.FileExtension : null,
+                FileMD5       = level>0 ? this.FileMD5 : null,
+                FileVisitCnt  = level>0 ? this.FileVisitCnt : null,
             };
         }
 

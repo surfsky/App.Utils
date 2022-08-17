@@ -281,7 +281,7 @@ namespace App.Entities
                 (item as EntityBase<T>).Delete(log);
         }
 
-        /// <summary>删除。若类实现了IDeleteLogic接口则采用逻辑删除；若类实现了IDeleteRecursive接口则实现递归删除；默认采用物理删除；</summary>
+        /// <summary>删除。若类实现了 IDeleteLogic 接口则采用逻辑删除；否则实现物理删除，将删除资源、历史、关联表数据；</summary>
         public override void Delete(bool log = false)
         {
             Log(log, "删除", this.ID, this);
@@ -289,6 +289,7 @@ namespace App.Entities
             if (this is IDeleteLogic)
             {
                 (this as IDeleteLogic).InUsed = false;
+                //OnDeleteReference(this.ID);
                 this.Save();
             }
             // 物理删除

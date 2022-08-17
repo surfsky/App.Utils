@@ -271,6 +271,7 @@ namespace App.Utils
 
 
         /// <summary>获取网络图片</summary>
+        /// <remarks>经测试，百度图片url有限制。同样的url，用此方法百度的图片只能获取很小的图片，放到其它浏览器是ok的。</remarks>
         public static Bitmap GetNetworkImage(string url)
         {
             try
@@ -279,7 +280,8 @@ namespace App.Utils
                 req.Timeout = 180000;
                 req.Method = "GET";
                 var res = (HttpWebResponse)(req.GetResponse());
-                return new Bitmap(res.GetResponseStream());
+                var stream = res.GetResponseStream();
+                return Image.FromStream(stream) as Bitmap;
             }
             catch
             {

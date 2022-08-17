@@ -153,14 +153,14 @@ namespace App.Entities
         /// - 算了，太精巧了不容易维护，还是要求每个实体类都手工写 Export 方法
         /// 
         /// </remarks>
-        public virtual object Export(ExportMode type = ExportMode.Normal)
+        public virtual object Export(int level = 0)
         {
             return this;
         }
         /// <summary>导出json</summary>
-        public string ExportJson(ExportMode type = ExportMode.Normal)
+        public string ExportJson(int level = 0)
         {
-            return Export(type).ToJson();
+            return Export(level).ToJson();
         }
 
 
@@ -339,13 +339,13 @@ namespace App.Entities
         }
 
         /// <summary>批量修正数据（请用 new T().Fix()方式调用）</summary>
-        public virtual int Fix()
+        public virtual int FixBatch()
         {
             return 0;
         }
 
         /// <summary>修正单条数据</summary>
-        public virtual object FixItem()
+        public virtual object Fix()
         {
             return this;
         }

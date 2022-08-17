@@ -20,6 +20,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyProductAttribute("App.WebCore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("App.WebCore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("3.0.0.0")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "http://github.com/surfsky/App.Utils")]
 
 // 由 MSBuild WriteCodeFragment 类生成。
 

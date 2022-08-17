@@ -38,7 +38,7 @@ namespace App.Entities
         //public virtual User User { get; set; }
 
         // 获取导出对象
-        public override object Export(ExportMode type = ExportMode.Normal)
+        public override object Export(int level = 0)
         {
             return new
             {
@@ -51,7 +51,7 @@ namespace App.Entities
                 this.CreateDt,
                 this.Remark,
                 //this.User?.NickName,
-                Images = this.Images?.Cast(t => t.Export(type)),
+                Images = this.Images?.Cast(t => t.Export(level)),
             };
         }
 

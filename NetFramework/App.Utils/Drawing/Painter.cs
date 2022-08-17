@@ -177,11 +177,13 @@ namespace App.Utils
         {
             Bitmap returnBitmap = new Bitmap((int)(bmp.Width*1.5), (int)(bmp.Height*1.5));
             Graphics g = Graphics.FromImage(returnBitmap);
-            g.InterpolationMode = InterpolationMode.NearestNeighbor;
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+            g.InterpolationMode = InterpolationMode.HighQualityBicubic;
             g.TranslateTransform((float)bmp.Width / 2, (float)bmp.Height / 2);     // move rotation point to center of image
             g.RotateTransform(angle);                                          // rotate
             g.TranslateTransform(-(float)bmp.Width / 2, -(float)bmp.Height / 2);   // move image back
             g.DrawImage(bmp, new Point(0, 0));
+            g.Dispose();
             return returnBitmap;
         }
 

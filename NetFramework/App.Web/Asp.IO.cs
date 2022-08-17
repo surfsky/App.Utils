@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -213,7 +213,7 @@ namespace App.Web
             if (attachName.IsNotEmpty())
                 //response.AddHeader("Content-Disposition", "attachment; filename=" + attachName.UrlEncode());  // online
                 response.AddHeader("Content-Disposition", "online; filename=" + attachName.UrlEncode());  // online
-            response.Cache.SetCacheability(HttpCacheability.NoCache);
+            //response.Cache.SetCacheability(HttpCacheability.NoCache);
             response.BinaryWrite(bytes);
             response.End();  // 结束请求，跳到ApplicationEndRequest事件
         }

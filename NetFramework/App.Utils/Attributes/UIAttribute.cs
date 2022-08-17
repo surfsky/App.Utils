@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
@@ -147,12 +148,6 @@ namespace App.Utils
         }
 
         // 链式表达式
-        public UIAttribute SetEditor(EditorType editor, object tag=null)
-        {
-            this.Editor = editor;
-            this.Tag = tag.ToJson();
-            return this;
-        }
         public UIAttribute SetColumn(ColumnType column, int? width = null, string title = "", bool? sort = null, object tag = null)
         {
             if (width != null)
@@ -192,6 +187,18 @@ namespace App.Utils
             return this;
         }
 
+
+        //------------------------------------------------
+        // 设置各种编辑器
+        //------------------------------------------------
+        /// <summary>设置编辑器类型</summary>
+        public UIAttribute SetEditor(EditorType editor, object tag = null)
+        {
+            this.Editor = editor;
+            this.Tag = tag.ToJson();
+            return this;
+        }
+
         /// <summary>添加弹窗选择器成员（窗口指定 UrlTemplate）</summary>
         public UIAttribute SetEditorWin(Type valueType, string textField, string urlTemplate, string title = "")
         {
@@ -204,6 +211,11 @@ namespace App.Utils
             return this;
         }
 
+        /// <summary>添加图像成员</summary>
+        public UIAttribute SetEditorImage(Size? size = null)
+        {
+            return this.SetEditor(EditorType.Image, size);
+        }
 
     }
 }

@@ -62,6 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Drawing\BitmapOperator.cs" />
     <Compile Include="UtilConfig.cs" />
     <Compile Include="Attributes\ScopeAttribute.cs" />
     <Compile Include="Attributes\SearchAttribute.cs" />
@@ -115,7 +116,6 @@
     <Compile Include="Net\SocketData.cs" />
     <Compile Include="Threads\ThreadPond.cs" />
     <Compile Include="Base\DateTimeHelper.cs" />
-    <Compile Include="Math\DESEncrypt.cs" />
     <Compile Include="Drawing\Painter.cs" />
     <Compile Include="Linq\EFHelper.cs" />
     <Compile Include="Base\EnumHelper.cs" />

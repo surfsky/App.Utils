@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "E2SAXgZTxzZGk0L1S1erIP196WS5z1jUEtjH33c+QMo25fsaOslojoJwf9vUG6b0aa3TfyxEy8Z5ofI4wwOAMQ==",
+  "dgSpecHash": "lTBqfeKRtD01TKIjGasYrWIX19ZcFlCXn9zEES8x5gIP2isDpq/fJ32oBK+J6ThbpHLfT7ZamRduanQezlnddw==",
   "success": true,
   "projectFilePath": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetStandard\\App.UtilsTests\\App.UtilsTests.csproj",
   "expectedPackageFiles": [
@@ -67,8 +67,8 @@
     "C:\\Users\\CJH\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\CJH\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
     "C:\\Users\\CJH\\.nuget\\packages\\system.collections.immutable\\1.5.0\\system.collections.immutable.1.5.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.collections.nongeneric\\4.3.0\\system.collections.nongeneric.4.3.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.collections.specialized\\4.3.0\\system.collections.specialized.4.3.0.nupkg.sha512",
+    "C:\\Users\\CJH\\.nuget\\packages\\system.collections.nongeneric\\4.3.0\\system.collections.nongeneric.4.3.0.nupkg.sha512",
+    "C:\\Users\\CJH\\.nuget\\packages\\system.collections.specialized\\4.3.0\\system.collections.specialized.4.3.0.nupkg.sha512",
     "C:\\Users\\CJH\\.nuget\\packages\\system.componentmodel\\4.3.0\\system.componentmodel.4.3.0.nupkg.sha512",
     "C:\\Users\\CJH\\.nuget\\packages\\system.componentmodel.annotations\\4.5.0\\system.componentmodel.annotations.4.5.0.nupkg.sha512",
     "C:\\Users\\CJH\\.nuget\\packages\\system.componentmodel.primitives\\4.3.0\\system.componentmodel.primitives.4.3.0.nupkg.sha512",
@@ -148,8 +148,7 @@
     "C:\\Users\\CJH\\.nuget\\packages\\z.entityframework.plus.efcore\\2.0.48\\z.entityframework.plus.efcore.2.0.48.nupkg.sha512",
     "C:\\Users\\CJH\\.nuget\\packages\\z.expressions.eval\\3.1.10\\z.expressions.eval.3.1.10.nupkg.sha512",
     "C:\\Users\\CJH\\.nuget\\packages\\zkweb.system.drawing\\4.0.1\\zkweb.system.drawing.4.0.1.nupkg.sha512",
-    "C:\\Users\\CJH\\.nuget\\packages\\app.utils\\3.0.2\\app.utils.3.0.2.nupkg.sha512",
-    "C:\\Users\\CJH\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+    "C:\\Users\\CJH\\.nuget\\packages\\app.utils\\3.0.2\\app.utils.3.0.2.nupkg.sha512"
   ],
   "logs": []
 }

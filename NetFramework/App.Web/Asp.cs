@@ -169,6 +169,8 @@ namespace App.Web
         /// <param name="url">可用~/，也可以用完整的http地址</param>
         public static Image GetServerOrNetworkImage(string url)
         {
+            if (url.IsEmpty())
+                return null;
             if (!IsRelative(url))
                 return HttpHelper.GetNetworkImage(url);
             else if (IsWeb)
@@ -179,8 +181,9 @@ namespace App.Web
         /// <summary>是否是相对路径（以~./等开头）</summary>
         public static bool IsRelative(this string url)
         {
-            if (url.StartsWith("~/") || url.StartsWith(".") || url.StartsWith("/"))
-                return true;
+            if (url.IsNotEmpty())
+                if (url.StartsWith("~/") || url.StartsWith(".") || url.StartsWith("/"))
+                    return true;
             return false;
         }
 

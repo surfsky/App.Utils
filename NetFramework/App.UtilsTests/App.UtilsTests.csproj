@@ -90,10 +90,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\App.Entities\App.Entities.csproj">
-      <Project>{456530ff-33f6-491e-a62d-832dc4983bc6}</Project>
-      <Name>App.Entities</Name>
-    </ProjectReference>
     <ProjectReference Include="..\App.Utils\App.Utils.csproj">
       <Project>{c887d0a1-20f6-44da-87df-ea8d45ace744}</Project>
       <Name>App.Utils</Name>

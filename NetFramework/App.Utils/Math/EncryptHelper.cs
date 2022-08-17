@@ -79,7 +79,7 @@ namespace App.Utils
 
 
         ///-------------------------------------------------------------------------
-        /// 使用 DES 算法加密解密（对称算法）
+        /// 使用 DES (Data Encryption Standard)算法加密解密（对称算法）
         ///-------------------------------------------------------------------------
         /// <summary>
         /// 用 DES 算法加密字符串。
@@ -87,14 +87,14 @@ namespace App.Utils
         /// 速度快，特别适用于对较大的数据流执行加密转换
         /// </summary>
         /// <param name="text">要加密的文本</param>
-        /// <param name="key">8或16字节密钥，如"12345678"</param>
+        /// <param name="key">8或16字节密钥（4或8个字符），如"12345678"</param>
         /// <returns>加密后的文本</returns>
         public static string DesEncrypt(this string text, string key, Encoding encoding = null)
         {
             if (text.IsEmpty()) return "";
             encoding = encoding ?? Encoding.UTF8;
             DESCryptoServiceProvider des = new DESCryptoServiceProvider();
-            des.Mode = System.Security.Cryptography.CipherMode.ECB;
+            des.Mode = CipherMode.ECB;
             des.Padding = PaddingMode.Zeros;
             des.Key = encoding.GetBytes(key);
 
@@ -112,7 +112,7 @@ namespace App.Utils
             if (text.IsEmpty())  return "";
             encoding = encoding ?? Encoding.UTF8;
             DESCryptoServiceProvider des = new DESCryptoServiceProvider();
-            des.Mode = System.Security.Cryptography.CipherMode.ECB;
+            des.Mode = CipherMode.ECB;
             des.Padding = PaddingMode.Zeros;
             des.Key = encoding.GetBytes(key);
 
@@ -121,15 +121,64 @@ namespace App.Utils
             return encoding.GetString(outputBuffer).TrimEnd('\0');
         }
 
+
+        ///-------------------------------------------------------------------------
+        /// 使用 AES (Advanced Encryption Standard) 算法加解密（对称算法）
+        /// 参考：https://blog.csdn.net/weixin_30753873/article/details/98694084
+        /// 简单说来：AES 比 DES 拥有更好的安全性和性能
+        ///-------------------------------------------------------------------------
+        /// <summary>AES 加密</summary>
+        /// <param name="text">需要加密的字符串</param>
+        /// <param name="key">32位密钥（16个字符），如 1234567890123456</param>
+        /// <param name="iv">加密向量，如 abcdefghijklmnop</param>
+        /// <returns>加密后的字符串</returns>
+        public static string AesEncrypt(this string text, string key, string iv="abcdefghijklmnop")
+        {
+            Byte[] txtBytes = Encoding.UTF8.GetBytes(text);
+            Byte[] keyBytes = Encoding.UTF8.GetBytes(key);
+            var rijndael = new RijndaelManaged();
+            rijndael.Key = keyBytes;
+            rijndael.Mode = CipherMode.ECB;
+            rijndael.Padding = PaddingMode.PKCS7;
+            rijndael.IV = Encoding.UTF8.GetBytes(iv);
+            var transform = rijndael.CreateEncryptor();
+            Byte[] resultBytes = transform.TransformFinalBlock(txtBytes, 0, txtBytes.Length);
+            return Convert.ToBase64String(resultBytes, 0, resultBytes.Length);
+        }
+
+        /// <summary>AES 解密</summary>
+        /// <param name="text">需要解密的字符串</param>
+        /// <param name="key">32位密钥（16个字符），如 1234567890123456</param>
+        /// <param name="iv">加密向量，如 abcdefghijklmnop</param>
+        /// <returns>解密后的字符串</returns>
+        public static string AesDecrypt(this string text, string key, string iv="abcdefghijklmnop")
+        {
+            Byte[] txtBytes = Convert.FromBase64String(text);
+            Byte[] keyBytes = Encoding.UTF8.GetBytes(key);
+            var rijndael = new RijndaelManaged();
+            rijndael.Key = keyBytes;
+            rijndael.Mode = CipherMode.ECB;
+            rijndael.Padding = PaddingMode.PKCS7;
+            rijndael.IV = Encoding.UTF8.GetBytes(iv);
+            var transform = rijndael.CreateDecryptor();
+            Byte[] resultBytes = transform.TransformFinalBlock(txtBytes, 0, txtBytes.Length);
+            return Encoding.UTF8.GetString(resultBytes);
+        }
+
         ///-------------------------------------------------------------------------
         /// RSA 非对称加密
-        ///-------------------------------------------------------------------------
-        /// <summary>
-        /// 用RSA加密字符串，产生加密文本和密钥
+        /// 
+        /// 非对称密钥拥有很长的密钥，具有较好的安全性。但性能不好。
+        /// 一般我们结合使用 RSA 和 DES：先用 RSA 协商 DES 密钥，再用DES 进行加密传输
+        /// 这就是 Https 的基本原理
+        /// 
         /// RSA算法的理论根据来自于一个大素数所具有的特性。对于给定的两个大素数A与B，很容易计算出它们的乘积。
         /// 但是，仅知道AB的乘积却很难计算原来的A与B各自的值。
         /// 在不深入到RSA算法细节的情况下，可以简单得认为(A，B)这对数定义了非对称算法中的私钥，而AB的乘积则定义了算法中的公钥。
         /// 以Base64String方式保存，公钥324个字符，私钥1220字符。
+        ///-------------------------------------------------------------------------
+        /// <summary>
+        /// 用RSA加密字符串，产生加密文本和密钥
         /// </summary>
         /// <example>
         ///    string msg = "hello world";

@@ -17,6 +17,62 @@ namespace App.Utils
     /// </summary>
     public static class StringHelper
     {
+        /// <summary>压缩html代码</summary>
+        public static string TrimHtml(this string html)
+        {
+            var txt = html;
+            txt = Regex.Replace(txt, @"^\s*$\n", "", RegexOptions.Multiline);    // 空行
+            txt = Regex.Replace(txt, @"/\*[\s\S]*?\*/", "", RegexOptions.Multiline);   // 多行注释
+            // 去除单行注释、行尾注释
+            txt = Regex.Replace(txt, @":*//.*\n", new MatchEvaluator((match) =>
+            {
+                if (match.Value.StartsWith(@"://"))
+                    return match.Value;
+                return "";
+            }));
+            txt = Regex.Replace(txt, @"[\r\n]", " ");        // 回车换行符-》空格
+            txt = Regex.Replace(txt, " +", " ");             // 多空格合并
+            return txt;
+        }
+
+        /// <summary>去除空行</summary>
+        public static string TrimEmptyLine(this string txt)
+        {
+            txt = Regex.Replace(txt, @"^\s*$\n", "", RegexOptions.Multiline);    // 空行
+            txt = Regex.Replace(txt, @"[\r\n]", " ");        // 回车换行符-》空格
+            txt = Regex.Replace(txt, " +", " ");             // 多空格合并
+            return txt;
+        }
+        /// <summary>去除回车</summary>
+        public static string TrimReturn(this string txt)
+        {
+            txt = Regex.Replace(txt, @"[\r\n]", " ");        // 回车换行符-》空格
+            return txt;
+        }
+        /// <summary>合并空字符</summary>
+        public static string MergeSpace(this string txt)
+        {
+            txt = Regex.Replace(txt, " +", " ");             // 多空格合并
+            return txt;
+        }
+        /// <summary>去除单行备注</summary>
+        public static string TrimMultilineComment(this string txt)
+        {
+            txt = Regex.Replace(txt, @"/\*[\s\S]*?\*/", "", RegexOptions.Multiline);   // 多行注释
+            return txt;
+        }
+        /// <summary>去除单行备注</summary>
+        public static string TrimInlineComment(this string txt)
+        {
+            txt = Regex.Replace(txt, @":*//.*\n", new MatchEvaluator((match) =>
+            {
+                if (match.Value.StartsWith(@"://"))
+                    return match.Value;
+                return "";
+            }));
+            return txt;
+        }
+
         /// <summary>为 Url 增加合并查询字符串（若存在则覆盖）</summary>
         /// <param name="queryString">要添加的查询字符串，如a=x&b=x</param>
         public static string AddQueryString(this string url, string queryString)
@@ -80,9 +136,9 @@ namespace App.Utils
             if (n != -1)
             {
                 if (keepKey)
-                    return name.SubText(n);
+                    return name.SubText(n, -1);
                 else
-                    return name.SubText(n + key.Length);
+                    return name.SubText(n + key.Length, -1);
             }
             return name;
         }
@@ -97,9 +153,9 @@ namespace App.Utils
             if (n != -1)
             {
                 if (keepKey)
-                    return name.SubText(n);
+                    return name.SubText(n, -1);
                 else
-                    return name.SubText(n + key.Length);
+                    return name.SubText(n + key.Length, -1);
             }
             return name;
         }
@@ -144,13 +200,13 @@ namespace App.Utils
             return txt.TrimEnd(seperator);
         }
 
-        /// <summary>拆分字符串并转化为对象列表（可处理 , ; tab space）</summary>
+        /// <summary>拆分字符串并转化为对象列表（可处理 , ; | tab space）</summary>
         public static List<T> Split<T>(this string text)
         {
             List<T> items = new List<T>();
             if (text != null)
             {
-                var parts = text.Split(new char[] { ',', ';', '\t', ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                var parts = text.Split(new char[] { ',', ';', '|', '\t', ' '}, StringSplitOptions.RemoveEmptyEntries);
                 items = parts.Cast(t => t.Parse<T>());
             }
             return items;
@@ -353,7 +409,8 @@ namespace App.Utils
         
         /// <summary>安全裁剪字符串（可替代SubString()方法）</summary>
         /// <param name="startIndex">开始字符位置。base-0</param>
-        public static string SubText(this string text, int startIndex, int length=-1)
+        /// <param name="length">需要裁剪的长度。若为 -1 则裁剪到文本末尾</param>
+        public static string SubText(this string text, int startIndex, int length)
         {
             if (text.IsEmpty()) return "";
             var n = text.Length;

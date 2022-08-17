@@ -31,6 +31,7 @@ This library supports many useful convinient extensions and methods, such as:
 [assembly: System.Reflection.AssemblyProductAttribute("App.Utils")]
 [assembly: System.Reflection.AssemblyTitleAttribute("App.Utils")]
 [assembly: System.Reflection.AssemblyVersionAttribute("3.0.0.0")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https://github.com/surfsky/App.Utils")]
 
 // 由 MSBuild WriteCodeFragment 类生成。
 

@@ -69,8 +69,9 @@
           "lib/net45/ZKWeb.System.Drawing.dll": {}
         }
       },
-      "App.Utils/1.0.0": {
+      "App.Utils/3.0.2": {
         "type": "project",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/App.Utils.dll": {}
         },
@@ -82,7 +83,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.5",
         "dependencies": {
-          "App.Utils": "1.0.0",
+          "App.Utils": "3.0.2",
           "ZKWeb.System.Drawing": "4.0.1"
         },
         "compile": {
@@ -161,8 +162,9 @@
           "lib/net45/ZKWeb.System.Drawing.dll": {}
         }
       },
-      "App.Utils/1.0.0": {
+      "App.Utils/3.0.2": {
         "type": "project",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/App.Utils.dll": {}
         },
@@ -174,7 +176,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.5",
         "dependencies": {
-          "App.Utils": "1.0.0",
+          "App.Utils": "3.0.2",
           "ZKWeb.System.Drawing": "4.0.1"
         },
         "compile": {
@@ -253,8 +255,9 @@
           "lib/net45/ZKWeb.System.Drawing.dll": {}
         }
       },
-      "App.Utils/1.0.0": {
+      "App.Utils/3.0.2": {
         "type": "project",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/App.Utils.dll": {}
         },
@@ -266,7 +269,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.5",
         "dependencies": {
-          "App.Utils": "1.0.0",
+          "App.Utils": "3.0.2",
           "ZKWeb.System.Drawing": "4.0.1"
         },
         "compile": {
@@ -345,8 +348,9 @@
           "lib/net45/ZKWeb.System.Drawing.dll": {}
         }
       },
-      "App.Utils/1.0.0": {
+      "App.Utils/3.0.2": {
         "type": "project",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/App.Utils.dll": {}
         },
@@ -358,7 +362,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.5",
         "dependencies": {
-          "App.Utils": "1.0.0",
+          "App.Utils": "3.0.2",
           "ZKWeb.System.Drawing": "4.0.1"
         },
         "compile": {
@@ -496,10 +500,10 @@
         "zkweb.system.drawing.nuspec"
       ]
     },
-    "App.Utils/1.0.0": {
+    "App.Utils/3.0.2": {
       "type": "project",
-      "path": "../App.Utils/App.Utils.csproj",
-      "msbuildProject": "../App.Utils/App.Utils.csproj"
+      "path": "../../NetStandard/App.Utils/App.Utils.csproj",
+      "msbuildProject": "../../NetStandard/App.Utils/App.Utils.csproj"
     },
     "App.Web/1.0.0": {
       "type": "project",
@@ -518,7 +522,8 @@
   },
   "packageFolders": {
     "C:\\Users\\CJH\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -531,10 +536,12 @@
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
         "C:\\Users\\CJH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -587,5 +594,43 @@
         "#import": []
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "项目 App.Utils 与 net45 (.NETFramework,Version=v4.5) 不兼容。 项目 App.Utils 支持: netstandard2.0 (.NETStandard,Version=v2.0)",
+      "libraryId": "App.Utils",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.5"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "项目 App.Utils 与 net45 (.NETFramework,Version=v4.5) / win 不兼容。 项目 App.Utils 支持: netstandard2.0 (.NETStandard,Version=v2.0)",
+      "libraryId": "App.Utils",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.5/win"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "项目 App.Utils 与 net45 (.NETFramework,Version=v4.5) / win-x64 不兼容。 项目 App.Utils 支持: netstandard2.0 (.NETStandard,Version=v2.0)",
+      "libraryId": "App.Utils",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.5/win-x64"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "项目 App.Utils 与 net45 (.NETFramework,Version=v4.5) / win-x86 不兼容。 项目 App.Utils 支持: netstandard2.0 (.NETStandard,Version=v2.0)",
+      "libraryId": "App.Utils",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.5/win-x86"
+      ]
+    }
+  ]
 }

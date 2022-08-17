@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "qVRuBz3/yPBB8oISeVvr610AhkROwvoB42+QRETGXGkfrQVX2ucNaZpuIX7pcRBNvNUfZyI0DGi2dS7kKL6IGg==",
-  "success": true,
+  "dgSpecHash": "YiNREUqaIJd/Vl+0wVabxu2TL6FqG1fVdhYYxkLyG/YqPra7mQ/Y25Z2j3gE2f5Wn3kWSeoHQhFPrtK2OttgjQ==",
+  "success": false,
   "projectFilePath": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Entities\\App.Entities.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\CJH\\.nuget\\packages\\entityframework\\6.2.0\\entityframework.6.2.0.nupkg.sha512",
@@ -10,7 +10,44 @@
     "C:\\Users\\CJH\\.nuget\\packages\\z.entityframework.plus.ef6\\1.12.19\\z.entityframework.plus.ef6.1.12.19.nupkg.sha512",
     "C:\\Users\\CJH\\.nuget\\packages\\z.expressions.eval\\3.1.8\\z.expressions.eval.3.1.8.nupkg.sha512",
     "C:\\Users\\CJH\\.nuget\\packages\\zkweb.system.drawing\\4.0.1\\zkweb.system.drawing.4.0.1.nupkg.sha512",
-    "C:\\Users\\CJH\\.nuget\\packages\\app.utils\\1.0.0\\app.utils.1.0.0.nupkg.sha512"
+    "C:\\Users\\CJH\\.nuget\\packages\\app.utils\\3.0.2\\app.utils.3.0.2.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "项目 App.Utils 与 net45 (.NETFramework,Version=v4.5) 不兼容。 项目 App.Utils 支持: netstandard2.0 (.NETStandard,Version=v2.0)",
+      "libraryId": "App.Utils",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.5"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "项目 App.Utils 与 net45 (.NETFramework,Version=v4.5) / win 不兼容。 项目 App.Utils 支持: netstandard2.0 (.NETStandard,Version=v2.0)",
+      "libraryId": "App.Utils",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.5/win"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "项目 App.Utils 与 net45 (.NETFramework,Version=v4.5) / win-x64 不兼容。 项目 App.Utils 支持: netstandard2.0 (.NETStandard,Version=v2.0)",
+      "libraryId": "App.Utils",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.5/win-x64"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "项目 App.Utils 与 net45 (.NETFramework,Version=v4.5) / win-x86 不兼容。 项目 App.Utils 支持: netstandard2.0 (.NETStandard,Version=v2.0)",
+      "libraryId": "App.Utils",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.5/win-x86"
+      ]
+    }
+  ]
 }

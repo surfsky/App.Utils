@@ -540,3 +540,5 @@
 \\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetStandard\App.UtilsTests\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 \\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetStandard\App.UtilsTests\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
 \\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetStandard\App.UtilsTests\bin\Debug\netcoreapp3.1\PinYinConverterCore.dll
+\\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetStandard\App.UtilsTests\obj\Debug\netcoreapp3.1\App.UtilsTests.csproj.AssemblyReference.cache
+\\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetStandard\App.UtilsTests\obj\Debug\netcoreapp3.1\App.UtilsTests.GeneratedMSBuildEditorConfig.editorconfig
