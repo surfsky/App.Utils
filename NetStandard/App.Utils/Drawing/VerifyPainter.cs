@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-//using System.Drawing;
-//using System.Drawing.Drawing2D;
-using System.DrawingCore;
-using System.DrawingCore.Drawing2D;
+using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Reflection;
 using System.Web;
@@ -69,7 +67,7 @@ namespace App.Utils
                 //new VerifyCodeConfig(fontAgent, 18, -2, 0),      // 空心字体
                 //new VerifyCodeConfig(new Font("Disko", 24), 17, -2, 2),           // 空心字体
                 //new VerifyCodeConfig(new Font("Times New Roman", 36), 18, -8, 2),
-                new VerifyCodeConfig(fontStencil, 22, -5, 0),
+                new VerifyCodeConfig(fontStencil, 22, 5, 0),
                 //new VerifyCodeConfig(fontPledg, 20, -2, 0),
                 //new VerifyCodeFont(new Font("Gungsuh", 18), 18, 2, 2),
             };

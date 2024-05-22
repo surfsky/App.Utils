@@ -1,11 +1,14 @@
 ﻿# Description
 
 AppPlat utility library (ui-independent, platform-independent)
+Depend on NetStandard 2.0 and AspNetCore
+
+前身是 AppPlat.Corer，支持 NetFramework 4.5
 
 # Projects
 
 - App.Utils       基于 NetStandard 2.0 的辅助类库。支持 NetFramework 4.6.1及以后版本使用。
-- App.Entities    基于 NetStatndard 2.0 的 EF 单类框架。支持 NetFramework 4.6.1及以后版本使用。
+- App.Entities    基于 NetStandard 2.0 的 EF 单类框架。支持 NetFramework 4.6.1及以后版本使用。
 - App.Web         基于 AspNet 的Web辅助类库
 - App.WebCore     基于 AspNetCore 的Web辅助类库
 - App.UtilsTests  测试
@@ -33,9 +36,8 @@ This library supports many useful convinient extensions and methods, such as:
 
 ```
 
-Nuget: install-package App.Corer
+Nuget: install-package App.Utils
 ```
-> The desired name *App.Core* has been used in nuget，so I have to use *App.Corer*, ATTENTION*
 
 # Examples
 

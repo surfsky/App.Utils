@@ -1,48 +1,46 @@
 {
   "format": 1,
   "restore": {
-    "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.UtilsTests\\App.UtilsTests.csproj": {}
+    "\\\\Mac\\Home\\Downloads\\Dev\\180701-AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.UtilsTests\\App.UtilsTests.csproj": {}
   },
   "projects": {
-    "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.UtilsTests\\App.UtilsTests.csproj": {
+    "\\\\Mac\\Home\\Downloads\\Dev\\180701-AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.UtilsTests\\App.UtilsTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.UtilsTests\\App.UtilsTests.csproj",
+        "projectUniqueName": "\\\\Mac\\Home\\Downloads\\Dev\\180701-AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.UtilsTests\\App.UtilsTests.csproj",
         "projectName": "App.UtilsTests",
-        "projectPath": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.UtilsTests\\App.UtilsTests.csproj",
+        "projectPath": "\\\\Mac\\Home\\Downloads\\Dev\\180701-AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.UtilsTests\\App.UtilsTests.csproj",
         "packagesPath": "C:\\Users\\CJH\\.nuget\\packages\\",
-        "outputPath": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.UtilsTests\\obj\\",
+        "outputPath": "\\\\Mac\\Home\\Downloads\\Dev\\180701-AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.UtilsTests\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\CJH\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net45"
+          "net48"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net45": {
+          "net48": {
             "projectReferences": {
-              "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Utils\\App.Utils.csproj": {
-                "projectPath": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Utils\\App.Utils.csproj"
+              "\\\\Mac\\Home\\Downloads\\Dev\\180701-AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Utils\\App.Utils.csproj": {
+                "projectPath": "\\\\Mac\\Home\\Downloads\\Dev\\180701-AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Utils\\App.Utils.csproj"
               }
             }
           }
         }
       },
       "frameworks": {
-        "net45": {
+        "net48": {
           "dependencies": {
             "MSTest.TestAdapter": {
               "target": "Package",
@@ -59,6 +57,9 @@
         "win": {
           "#import": []
         },
+        "win-arm64": {
+          "#import": []
+        },
         "win-x64": {
           "#import": []
         },
@@ -67,19 +68,19 @@
         }
       }
     },
-    "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Utils\\App.Utils.csproj": {
+    "\\\\Mac\\Home\\Downloads\\Dev\\180701-AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Utils\\App.Utils.csproj": {
       "restore": {
-        "projectUniqueName": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Utils\\App.Utils.csproj",
+        "projectUniqueName": "\\\\Mac\\Home\\Downloads\\Dev\\180701-AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Utils\\App.Utils.csproj",
         "projectName": "App.Utils",
-        "projectPath": "\\\\Mac\\Home\\Downloads\\Dev\\AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Utils\\App.Utils.csproj",
+        "projectPath": "\\\\Mac\\Home\\Downloads\\Dev\\180701-AppPlat\\App.Utils\\App.Utils-github\\NetFramework\\App.Utils\\App.Utils.csproj",
         "frameworks": {
-          "net45": {
+          "net48": {
             "projectReferences": {}
           }
         }
       },
       "frameworks": {
-        "net45": {}
+        "net48": {}
       }
     }
   }

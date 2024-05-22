@@ -4,6 +4,31 @@
         <name>App.Utils</name>
     </assembly>
     <members>
+        <member name="T:App.Utils.EmbedHelper">
+            <summary>
+            嵌入资源读取辅助类
+            注意：如果资源目录以数字打头，编译成资源时会加一个下划线 _，如/res/2.9.3 会编译成  /res/_2._9._3
+            所以要么完善该类，要么资源目录不要以数字打头
+            </summary>
+        </member>
+        <member name="M:App.Utils.EmbedHelper.GetResNames(System.Reflection.Assembly)">
+            <summary>获取数据集中的资源名称列表</summary>
+        </member>
+        <member name="M:App.Utils.EmbedHelper.GetStream(System.Reflection.Assembly,System.String,System.Boolean)">
+            <summary>获取数据集中的资源流</summary>
+            <param name="assembly">数据集</param>
+            <param name="resName">资源名称</param>
+            <param name="caseSensitive">是否大小写敏感</param>
+        </member>
+        <member name="M:App.Utils.EmbedHelper.GetBytes(System.Reflection.Assembly,System.String,System.Boolean)">
+            <summary>获取数据集中的字节数组</summary>
+        </member>
+        <member name="M:App.Utils.EmbedHelper.GetText(System.Reflection.Assembly,System.String,System.Boolean)">
+            <summary>获取数据集中的文本文件</summary>
+        </member>
+        <member name="M:App.Utils.EmbedHelper.GetImage(System.Reflection.Assembly,System.String,System.Boolean)">
+            <summary>获取数据集中的图片文件</summary>
+        </member>
         <member name="T:App.Utils.BitmapOperator">
             <summary>
             用指针操作位图像素的辅助类，性能高。
@@ -1615,8 +1640,8 @@
         </member>
         <member name="P:App.Utils.Properties.Resources.Culture">
             <summary>
-              重写当前线程的 CurrentUICulture 属性
-              重写当前线程的 CurrentUICulture 属性。
+              重写当前线程的 CurrentUICulture 属性，对
+              使用此强类型资源类的所有资源查找执行重写。
             </summary>
         </member>
         <member name="P:App.Utils.Properties.Resources.Agent_Red">

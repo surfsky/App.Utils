@@ -12,6 +12,15 @@ namespace App.Utils.Tests
     public class StringHelperTests
     {
         [TestMethod()]
+        public void IsComplexPasswordTest()
+        {
+            Assert.AreEqual("Admin".IsComplexPassword(), false);
+            Assert.AreEqual("Admin123".IsComplexPassword(), false);
+            Assert.AreEqual("Pa55word".IsComplexPassword(), false);
+            Assert.AreEqual("Pa55word@".IsComplexPassword(), true);
+        }
+
+        [TestMethod()]
         public void TrimEndTest()
         {
             Assert.AreEqual("ProductNameID".TrimEnd("ID"), "ProductName");

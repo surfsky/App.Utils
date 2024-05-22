@@ -31,10 +31,10 @@ namespace App.Web
         /// 注册 HttpContextAccessor 单例服务。
         /// 可用 var accessor = app.ApplicationServices.GetRequiredService<IHttpContextAccessor>() 获取上下文对象
         /// </summary>
-        //public static void AddHttpContext(this IServiceCollection services)
-        //{
-        //    services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-        //}
+        public static void AddHttpContext(this IServiceCollection services)
+        {
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+        }
 
         static IHttpContextAccessor _contextAccessor;
         static string _hostFolder { get; set; }

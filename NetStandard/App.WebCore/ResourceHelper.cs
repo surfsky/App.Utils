@@ -2,15 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Web;
-//using System.Web.UI;
 using System.Reflection;
 using System.IO;
-//using System.Drawing;
-//using System.Drawing.Imaging;
 using System.Collections;
 using Microsoft.AspNetCore.Http;
-using System.DrawingCore.Imaging;
-using System.DrawingCore;
+using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace App.Web
 {

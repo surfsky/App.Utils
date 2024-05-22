@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 //using System.Drawing;
-using System.DrawingCore;
+using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using System.DrawingCore.Text;
+using System.Drawing.Text;
 
 namespace App.Utils
 {
@@ -31,7 +31,7 @@ namespace App.Utils
         /// <summary>从内存中获取字体</summary>
         public static Font GetFont(byte[] fontData, int size, FontStyle style)
         {
-            var fonts = new System.DrawingCore.Text.PrivateFontCollection();
+            var fonts = new System.Drawing.Text.PrivateFontCollection();
             unsafe
             {
                 fixed (byte* pFontData = fontData)

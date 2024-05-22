@@ -32,3 +32,9 @@
 \\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.UtilsTests\bin\Debug\App.Entities.xml
 \\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.UtilsTests\bin\Debug\App.Web.xml
 \\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.UtilsTests\obj\Debug\App.UtilsTests.csproj.AssemblyReference.cache
+\\Mac\Home\Downloads\Dev\180701-AppPlat\App.Utils\App.Utils-github\NetFramework\App.UtilsTests\obj\Debug\App.UtilsTests.csproj.AssemblyReference.cache
+\\Mac\Home\Downloads\Dev\180701-AppPlat\App.Utils\App.Utils-github\NetFramework\App.UtilsTests\obj\Debug\App.UtilsTests.Properties.Resources.resources
+\\Mac\Home\Downloads\Dev\180701-AppPlat\App.Utils\App.Utils-github\NetFramework\App.UtilsTests\obj\Debug\App.UtilsTests.csproj.GenerateResource.cache
+\\Mac\Home\Downloads\Dev\180701-AppPlat\App.Utils\App.Utils-github\NetFramework\App.UtilsTests\obj\Debug\App.UtilsTests.csproj.CoreCompileInputs.cache
+\\Mac\Home\Downloads\Dev\180701-AppPlat\App.Utils\App.Utils-github\NetFramework\App.UtilsTests\obj\Debug\App.UtilsTests.dll
+\\Mac\Home\Downloads\Dev\180701-AppPlat\App.Utils\App.Utils-github\NetFramework\App.UtilsTests\obj\Debug\App.UtilsTests.pdb

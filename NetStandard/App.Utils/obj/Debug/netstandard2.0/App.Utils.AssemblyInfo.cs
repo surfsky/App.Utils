@@ -17,20 +17,21 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyDescriptionAttribute(@"AppPlat utility library (ui-independent, platform-independent)
 This library supports many useful convinient extensions and methods, such as:
 
-    - ToXXX
-    - CastXXX
-    - ParseXXX
-    - AsXXXi
+    - Object.ToXXX
+    - List.CastXXX
+    - List.MoveXXX
+    - String.FindXXX
+    - String.ParseXXX
     - Reflection
     - Encode/Decode
     - Interop
     - EF extensions
     - ...")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("3.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("3.0.2")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("6.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("6.0.0.2")]
 [assembly: System.Reflection.AssemblyProductAttribute("App.Utils")]
 [assembly: System.Reflection.AssemblyTitleAttribute("App.Utils")]
-[assembly: System.Reflection.AssemblyVersionAttribute("3.0.0.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("6.0.0.0")]
 [assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https://github.com/surfsky/App.Utils")]
 
 // 由 MSBuild WriteCodeFragment 类生成。

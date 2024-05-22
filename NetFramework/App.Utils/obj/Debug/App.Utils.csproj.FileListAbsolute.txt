@@ -36,3 +36,15 @@
 \\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.Utils\obj\Debug\App.Utils.dll
 \\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.Utils\obj\Debug\App.Utils.pdb
 \\Mac\Home\Downloads\Dev\AppPlat\App.Utils\App.Utils-github\NetFramework\App.Utils\obj\Debug\App.Utils.csproj.AssemblyReference.cache
+\\Mac\Home\Downloads\Dev\180701-AppPlat\App.Utils\App.Utils-github\NetFramework\App.Utils\bin\Debug\App.Utils.xml
+\\Mac\Home\Downloads\Dev\180701-AppPlat\App.Utils\App.Utils-github\NetFramework\App.Utils\bin\Debug\App.Utils.dll
+\\Mac\Home\Downloads\Dev\180701-AppPlat\App.Utils\App.Utils-github\NetFramework\App.Utils\bin\Debug\App.Utils.pdb
+\\Mac\Home\Downloads\Dev\180701-AppPlat\App.Utils\App.Utils-github\NetFramework\App.Utils\bin\Debug\Newtonsoft.Json.dll
+\\Mac\Home\Downloads\Dev\180701-AppPlat\App.Utils\App.Utils-github\NetFramework\App.Utils\bin\Debug\Newtonsoft.Json.xml
+\\Mac\Home\Downloads\Dev\180701-AppPlat\App.Utils\App.Utils-github\NetFramework\App.Utils\obj\Debug\App.Utils.csproj.AssemblyReference.cache
+\\Mac\Home\Downloads\Dev\180701-AppPlat\App.Utils\App.Utils-github\NetFramework\App.Utils\obj\Debug\App.Utils.Properties.Resources.resources
+\\Mac\Home\Downloads\Dev\180701-AppPlat\App.Utils\App.Utils-github\NetFramework\App.Utils\obj\Debug\App.Utils.csproj.GenerateResource.cache
+\\Mac\Home\Downloads\Dev\180701-AppPlat\App.Utils\App.Utils-github\NetFramework\App.Utils\obj\Debug\App.Utils.csproj.CoreCompileInputs.cache
+\\Mac\Home\Downloads\Dev\180701-AppPlat\App.Utils\App.Utils-github\NetFramework\App.Utils\obj\Debug\App.Utils.csproj.CopyComplete
+\\Mac\Home\Downloads\Dev\180701-AppPlat\App.Utils\App.Utils-github\NetFramework\App.Utils\obj\Debug\App.Utils.dll
+\\Mac\Home\Downloads\Dev\180701-AppPlat\App.Utils\App.Utils-github\NetFramework\App.Utils\obj\Debug\App.Utils.pdb

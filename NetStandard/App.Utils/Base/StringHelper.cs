@@ -243,7 +243,7 @@ namespace App.Utils
                 // Escaped char
                 else if (charIsEscaped)
                 {
-                    // TODO: replace \n,\r,\t,\v ???
+                    // replace \n,\r,\t,\v ???
                     chars[posInChars] = c;
                     posInChars++;
                     charIsEscaped = false;
@@ -304,6 +304,21 @@ namespace App.Utils
             }
 
             return new string(buffer, 0, nChars);
+        }
+
+        //--------------------------------------------------
+        // Password
+        //--------------------------------------------------
+        /// <summary>是否是复杂密码（数字、字母、特殊符号、8位）</summary>
+        public static bool IsComplexPassword(this string text)
+        {
+            var regex = new Regex(@"
+                (?=.*[0-9])                     #必须包含数字
+                (?=.*[a-zA-Z])                  #必须包含小写或大写字母
+                (?=([\x21-\x7e]+)[^a-zA-Z0-9])  #必须包含特殊符号
+                .{8,30}                         #至少8个字符，最多30个字符
+                ", RegexOptions.Multiline | RegexOptions.IgnorePatternWhitespace);
+            return regex.IsMatch(text);
         }
 
 

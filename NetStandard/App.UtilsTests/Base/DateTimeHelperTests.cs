@@ -14,7 +14,7 @@ namespace App.Utils.Tests
         [TestMethod()]
         public void ToTimeStampTest()
         {
-            var now = DateTime.Now;
+            var now = DateTime.UtcNow;
             var stamp = now.ToTimeStamp();
             var dt = stamp.ParseTimeStamp();
             Assert.AreEqual(now.ToString(), dt.ToString());

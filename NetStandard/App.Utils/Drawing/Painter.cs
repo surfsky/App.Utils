@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-//using System.Drawing;
-//using System.Drawing.Imaging;
 using System.Linq;
 using System.Web;
 using System.IO;
+//using System.Drawing;
+//using System.Drawing.Imaging;
 //using System.Drawing.Drawing2D;
 using System.Text;
-using System.DrawingCore;
-using System.DrawingCore.Imaging;
-using System.DrawingCore.Drawing2D;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.Drawing.Drawing2D;
 
 namespace App.Utils
 {

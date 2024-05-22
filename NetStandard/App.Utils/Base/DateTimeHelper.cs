@@ -123,8 +123,9 @@ namespace App.Utils
         //------------------------------------------------
         // 时间戳
         //------------------------------------------------
-        /// <summary>日期格式转成时间戳字符串（从1970年到现在的秒数）</summary>
+        /// <summary>本地时间转成时间戳字符串（从1970年到现在的秒数）</summary>
         /// <remarks>由于精度问题，可能有1s的误差</remarks>
+        /// <param name="dt">UTC 时间</param>
         public static string ToTimeStamp(this DateTime dt)
         {
             TimeSpan span = dt.ToUniversalTime() - new DateTime(1970, 1, 1, 0, 0, 0, 0);
@@ -144,14 +145,15 @@ namespace App.Utils
         }
         */
 
-        /// <summary>解析时间戳为时间（netcore 此代码有时候会误差1秒，要查原因）</summary>
+        /// <summary>解析时间戳为本地时间（netcore 此代码有时候会误差1秒，要查原因）</summary>
         /// <param name="timeStamp">Unix时间戳格式</param>
         /// <returns>C#格式时间</returns>
         public static DateTime ParseTimeStamp(this string timeStamp)
         {
+            //var dt = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));
+            var dt = DateTime.SpecifyKind(new DateTime(1970, 1, 1, 0, 0, 0, 0), DateTimeKind.Local);
             var ticks = long.Parse(timeStamp + "0000000");
             var span = new TimeSpan(ticks);
-            var dt = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));
             return dt.Add(span);
         }
 

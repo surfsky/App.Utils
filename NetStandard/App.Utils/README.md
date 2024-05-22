@@ -13,6 +13,24 @@ public void ConfigureServices(IServiceCollection services)
 
 ## History
 
+6.0.0.*
+
+* 重命名版本，前三位与支持的类库同名，最后一位为修正版本号
+* 修订 RegexHelper，增加若干 FindXXX(), MoveXXX() 方法，并将网页解析部分拆分为 partial 类
+* 修订 ListHelper，增加 ToJoinString() 方法
+* 升级 Newtonsoft.Json 版本到
++ 增加 MathHelper.AESEncrypt(), AESEncrypt(), SHA256()
++ 增加 SNGenerator 30字符序列号生成类
+
+
+3.0.2
+    *IO.WriteFile
+    +IO.ReadFileText
+    +IO.ReadFileBytes
+
+3.0.1
+    Add Reflector.ExpressOf()
+
 3.0.0
     迁移到 netstandard, 并拆分为 App.Utils 和 App.Web 两个项目
     去除功能
@@ -24,10 +42,3 @@ public void ConfigureServices(IServiceCollection services)
         新增 Cacher 类
     修正 JsEvaluator, CsEvaluate, PinYin
 
-3.0.1
-    Add Reflector.ExpressOf()
-
-3.0.2
-    *IO.WriteFile
-    +IO.ReadFileText
-    +IO.ReadFileBytes
