@@ -1,21 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>net461;netstandard2.0;</TargetFrameworks>
     <Authors>surfsky</Authors>
     <Description>Entityframework utils</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageProjectUrl>http://github.com/surfsky/App.Utils</PackageProjectUrl>
     <Version>3.0.0</Version>
     <AssemblyVersion>3.0.0.0</AssemblyVersion>
+    <PackageReadmeFile>Readme.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Remove="EntityLogger.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="Readme.md" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +26,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\App.Utils\App.Utils.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Readme.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

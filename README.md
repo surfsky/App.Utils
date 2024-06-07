@@ -23,9 +23,10 @@ Depend on NetStandard 2.0 and AspNetCore
 This library supports many useful convinient extensions and methods, such as:
 
     - ToXXX
-    - CastXXX
     - ParseXXX
     - AsXXXi
+    - List.CastXXX
+    - List.MoveXXX
     - Reflection
     - Encode/Decode
     - Interop

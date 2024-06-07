@@ -67,6 +67,9 @@ namespace App.Utils
             return n;
         }
 
+        //---------------------------------------------------
+        // 集合操作
+        //---------------------------------------------------
         /// <summary>合并两个集合（会排除重复项）。功能同Union，返回值不一样</summary>
         public static List<T> Union<T>(this List<T> list1, List<T> list2)
         {
@@ -78,6 +81,23 @@ namespace App.Utils
             }
             return data;
         }
+
+        /// <summary>将列表根据条件拆分成两个列表</summary>
+        public static Tuple<List<T>, List<T>> Split<T>(this List<T> raw, Predicate<T> condition)
+        {
+            List<T> list1 = new List<T>();
+            List<T> list2 = new List<T>();
+            foreach (var item in raw)
+            {
+                if (condition(item))
+                    list1.Add(item);
+                else
+                    list2.Add(item);
+            }
+            return new Tuple<List<T>, List<T>>(list1, list2);
+        }
+
+
 
         //---------------------------------------------------
         // 元素操作

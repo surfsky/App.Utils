@@ -90,5 +90,20 @@ namespace App.Utils.Tests
             Assert.AreEqual(list[n], 2);
         }
 
+        [TestMethod()]
+        public void SplitTest()
+        {
+            //
+            var list = new List<int> { 1, 2, 3, 4, 5, 6, 7 };
+            var result = list.Split(t => t < 4);
+            Assert.AreEqual(result.Item1.Count, 3);
+            Assert.AreEqual(result.Item2.Count, 4);
+
+            //
+            var persons = Person.GetPersons();
+            var result2 = persons.Split(t => t.Age < 20);
+            Assert.AreEqual(result2.Item1.Count + result2.Item2.Count, persons.Count);
+
+        }
     }
 }

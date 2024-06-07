@@ -19,7 +19,7 @@ namespace App.Web
         public static void Export<T>(IList<T> objs, string fileName = "Export.xls", bool showFieldDescription=false)
         {
             var response = Asp.Response;
-            fileName = HttpUtility.UrlEncode(fileName, Encoding.UTF8);
+            //fileName = HttpUtility.UrlEncode(fileName, Encoding.UTF8);
             var bytes = ExcelHelper.ToExcelXml<T>(objs, showFieldDescription).ToBytes(); // 还是用xml吧，每个字段都是字符串类型，避免客户输入不同格式的数据
             //response.ClearContent();
             //response.ContentEncoding = Encoding.UTF8;
@@ -33,7 +33,7 @@ namespace App.Web
         public static void Export(DataTable dt, string fileName = "Export.xls")
         {
             var response = Asp.Response;
-            fileName = HttpUtility.UrlEncode(fileName, Encoding.UTF8);
+            //fileName = HttpUtility.UrlEncode(fileName, Encoding.UTF8);
             var bytes = ExcelHelper.ToExcelXml(dt).ToBytes();
             //response.ClearContent();
             //response.ContentEncoding = Encoding.UTF8;

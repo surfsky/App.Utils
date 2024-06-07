@@ -2,3 +2,11 @@
 /TestResults
 /Nugets
 /.vs
+/NetStandard/App.Utils/obj
+/NetStandard/App.Utils/bin
+/NetStandard/App.Entities/bin
+/NetStandard/App.Entities/obj
+/NetStandard/App.UtilsTests/obj
+/NetStandard/App.UtilsTests/bin
+/NetStandard/App.WebCore/obj
+/NetStandard/App.WebCore/bin
